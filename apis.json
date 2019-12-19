@@ -1,0 +1,92 @@
+{
+    "name": "MATLAB",
+    "description": "MathWorks develops, sells, and supports MATLAB and Simulink products.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/20038-matlab.jpg",
+    "tags": [
+        "algorithms",
+        "analysis",
+        "api provider",
+        "have api",
+        "machine learning",
+        "visualizations"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/matlab\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "MATLAB",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/20038-matlab.jpg",
+            "humanURL": "http:\/\/www.mathworks.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/matlab-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/matlab-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "http:\/\/blogs.mathworks.com\/graphics\/"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/blogs.mathworks.com\/simulink\/"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/blogs.mathworks.com\/cleve\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/blogs.mathworks.com\/graphics\/feed\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/blogs.mathworks.com\/seth\/?feed=rss2"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/feeds.feedburner.com\/mathworks\/moler"
+        },
+        {
+            "type": "Email",
+            "url": "privacy@mathworks.com"
+        },
+        {
+            "type": "Email",
+            "url": "support@mathworks.com"
+        },
+        {
+            "type": "Email",
+            "url": "receivables@mathworks.com"
+        },
+        {
+            "type": "Email",
+            "url": "academicsupport@mathworks.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/mathworks"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/MATLAB"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/www.mathworks.com\/"
+        }
+    ]
+}
