@@ -1,0 +1,101 @@
+name: MATLAB API
+description: APIs and integration points for MATLAB, a programming platform designed for engineers and scientists
+image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
+url: https://www.mathworks.com
+created: '2025'
+modified: '2025'
+apis:
+- name: MATLAB Engine API for Python
+  description: Call MATLAB from Python, allowing Python programs to start MATLAB, execute MATLAB functions, and exchange data between Python and MATLAB
+  image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
+  humanURL: https://www.mathworks.com/help/matlab/matlab-engine-for-python.html
+  baseURL: https://www.mathworks.com/help/matlab/apiref
+  tags:
+  - Python
+  - Integration
+  - Engine
+  properties:
+  - type: Documentation
+    url: https://www.mathworks.com/help/matlab/matlab-engine-for-python.html
+  - type: Installation Guide
+    url: https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html
+- name: MATLAB Engine API for Java
+  description: Execute MATLAB functions from Java programs and exchange data between Java and MATLAB
+  image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
+  humanURL: https://www.mathworks.com/help/matlab/matlab-engine-api-for-java.html
+  baseURL: https://www.mathworks.com/help/matlab/apiref
+  tags:
+  - Java
+  - Integration
+  - Engine
+  properties:
+  - type: Documentation
+    url: https://www.mathworks.com/help/matlab/matlab-engine-api-for-java.html
+  - type: API Reference
+    url: https://www.mathworks.com/help/matlab/apiref/matlabengine-package.html
+- name: MATLAB Engine API for C++
+  description: Call MATLAB from C++ programs with object-oriented programming support
+  image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
+  humanURL: https://www.mathworks.com/help/matlab/matlab-engine-api-for-cpp.html
+  baseURL: https://www.mathworks.com/help/matlab/apiref
+  tags:
+  - C++
+  - Integration
+  - Engine
+  properties:
+  - type: Documentation
+    url: https://www.mathworks.com/help/matlab/matlab-engine-api-for-cpp.html
+  - type: API Reference
+    url: https://www.mathworks.com/help/matlab/apiref/matlab-engine-api-for-c++.html
+- name: MATLAB RESTful Web Services
+  description: Create and deploy RESTful web services from MATLAB functions using MATLAB Production Server
+  image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
+  humanURL: https://www.mathworks.com/help/mps/restfuljson/creating-http-post-interface-to-restful-web-service.html
+  baseURL: https://www.mathworks.com/products/matlab-production-server.html
+  tags:
+  - REST
+  - Web Services
+  - Production
+  properties:
+  - type: Documentation
+    url: https://www.mathworks.com/help/mps/restfuljson/
+  - type: Product Page
+    url: https://www.mathworks.com/products/matlab-production-server.html
+- name: MATLAB Data API for C++
+  description: Work with MATLAB data types in C++ applications
+  image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
+  humanURL: https://www.mathworks.com/help/matlab/matlab-data-api-for-c-plus-plus.html
+  baseURL: https://www.mathworks.com/help/matlab/apiref
+  tags:
+  - C++
+  - Data
+  - Types
+  properties:
+  - type: Documentation
+    url: https://www.mathworks.com/help/matlab/matlab-data-api-for-c-plus-plus.html
+  - type: API Reference
+    url: https://www.mathworks.com/help/matlab/apiref/matlab-data-api-for-c++.html
+- name: MATLAB HTTP Interface
+  description: RESTful web services support for making HTTP requests from MATLAB
+  image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
+  humanURL: https://www.mathworks.com/help/matlab/http-interface.html
+  baseURL: https://www.mathworks.com/help/matlab
+  tags:
+  - HTTP
+  - REST
+  - Client
+  properties:
+  - type: Documentation
+    url: https://www.mathworks.com/help/matlab/http-interface.html
+  - type: Examples
+    url: https://www.mathworks.com/help/matlab/ref/webread.html
+maintainers:
+- name: MathWorks
+  email: support@mathworks.com
+  url: https://www.mathworks.com
+tags:
+- Engineering
+- Scientific Computing
+- Numerical Analysis
+- Data Analysis
+- Machine Learning
