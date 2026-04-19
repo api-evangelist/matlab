@@ -5,7 +5,7 @@ description: >-
 image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
 url: https://www.mathworks.com
 created: '2025'
-modified: '2026-03-16'
+modified: '2026-04-19'
 apis:
   - name: MATLAB Engine API for Python
     description: >-
@@ -21,15 +21,15 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/matlab/matlab-engine-for-python.html
-      - type: Installation Guide
+      - type: GettingStarted
         url: https://www.mathworks.com/help/matlab/matlab_external/install-the-matlab-engine-for-python.html
-      - type: Getting Started
+      - type: GettingStarted
         url: https://www.mathworks.com/help/matlab/matlab_external/get-started-with-matlab-engine-for-python.html
-      - type: API Reference
+      - type: APIReference
         url: https://www.mathworks.com/help/matlab/apiref/matlab.engine.matlabengine-class.html
-      - type: PyPI Package
+      - type: SDK
         url: https://pypi.org/project/matlabengine/
-      - type: GitHub Repository
+      - type: GitHubRepository
         url: https://github.com/mathworks/matlab-engine-for-python
   - name: MATLAB Engine API for Java
     description: >-
@@ -45,7 +45,7 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/matlab/matlab-engine-api-for-java.html
-      - type: API Reference
+      - type: APIReference
         url: https://www.mathworks.com/help/matlab/apiref/matlabengine-package.html
   - name: MATLAB Engine API for C++
     description: >-
@@ -60,9 +60,9 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/matlab/matlab-engine-api-for-cpp.html
-      - type: API Reference
+      - type: APIReference
         url: https://www.mathworks.com/help/matlab/apiref/matlab-engine-api-for-c++.html
-      - type: Requirements
+      - type: Documentation
         url: https://www.mathworks.com/help/matlab/matlab_external/requirements-to-build-cpp-engine-programs.html
   - name: MATLAB Engine API for C and Fortran
     description: >-
@@ -79,13 +79,13 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/matlab/matlab_external/introducing-matlab-engine.html
-      - type: C Engine Documentation
+      - type: Documentation
         url: https://www.mathworks.com/help/matlab/calling-matlab-engine-from-c-programs-1.html
-      - type: Fortran Engine Documentation
+      - type: Documentation
         url: https://www.mathworks.com/help/matlab/calling-matlab-engine-from-fortran-programs.html
-      - type: API Reference
+      - type: APIReference
         url: https://www.mathworks.com/help/matlab/apiref/engine.html
-      - type: Fortran API Libraries
+      - type: Documentation
         url: https://www.mathworks.com/help/matlab/matlab_external/matlab-fortran-api-libraries.html
   - name: MATLAB Engine API for .NET
     description: >-
@@ -102,9 +102,9 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/matlab/call-matlab-from-net.html
-      - type: API Reference
+      - type: APIReference
         url: https://www.mathworks.com/help/matlab/apiref/mathworks.matlab.engine.matlabengine.html
-      - type: Requirements
+      - type: Documentation
         url: https://www.mathworks.com/help/matlab/matlab_external/requirements-to-build-net-engine-programs.html
   - name: MATLAB RESTful Web Services
     description: >-
@@ -120,7 +120,7 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/mps/restfuljson/
-      - type: Product Page
+      - type: Documentation
         url: https://www.mathworks.com/products/matlab-production-server.html
   - name: MATLAB Production Server RESTful API
     description: >-
@@ -138,19 +138,19 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/mps/restful-api-and-json.html
-      - type: Function Execution API
+      - type: APIReference
         url: https://www.mathworks.com/help/mps/restfuljson/restful-api.html
-      - type: Discovery and Diagnostics API
+      - type: APIReference
         url: https://www.mathworks.com/help/mps/restfuljson/restful-api-for-discovery-and-diagnostics.html
-      - type: Archive Management API
+      - type: APIReference
         url: https://www.mathworks.com/help/mps/restfuljson/restful-api-for-deployable-archive-upload.html
-      - type: Client Programming
+      - type: Documentation
         url: https://www.mathworks.com/help/mps/client-programming.html
-      - type: Client Libraries
+      - type: SDK
         url: https://www.mathworks.com/products/matlab-production-server/client-libraries.html
-      - type: OpenAPI Interface
+      - type: OpenAPI
         url: https://github.com/mathworks-ref-arch/openapi-productionserver
-      - type: Product Page
+      - type: Documentation
         url: https://www.mathworks.com/help/mps/
   - name: MATLAB Web App Server
     description: >-
@@ -167,13 +167,13 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/webappserver/index.html
-      - type: Product Page
+      - type: Documentation
         url: https://www.mathworks.com/products/matlab-web-app-server.html
-      - type: Setup Guide
+      - type: GettingStarted
         url: https://www.mathworks.com/help/webappserver/ug/set-up-matlab-web-app-server.html
-      - type: Server Management
+      - type: Documentation
         url: https://www.mathworks.com/help/webappserver/server-management.html
-      - type: Configuration Reference
+      - type: APIReference
         url: https://www.mathworks.com/help/webappserver/ref/webappsconfig.html
   - name: MATLAB Data API for C++
     description: >-
@@ -188,7 +188,7 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/matlab/matlab-data-api-for-c-plus-plus.html
-      - type: API Reference
+      - type: APIReference
         url: https://www.mathworks.com/help/matlab/apiref/matlab-data-api-for-c++.html
   - name: MATLAB HTTP Interface
     description: >-
@@ -203,9 +203,9 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/matlab/http-interface.html
-      - type: Examples
+      - type: CodeExamples
         url: https://www.mathworks.com/help/matlab/ref/webread.html
-      - type: Web Services Overview
+      - type: Documentation
         url: https://www.mathworks.com/help/matlab/web-services.html
   - name: MATLAB MEX API
     description: >-
@@ -223,13 +223,13 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/matlab/call-mex-files-1.html
-      - type: C++ MEX API
+      - type: APIReference
         url: https://www.mathworks.com/help/matlab/matlab_external/cpp-mex-api.html
-      - type: C MEX Functions
+      - type: APIReference
         url: https://www.mathworks.com/help/matlab/matlab_external/c-mex-functions.html
-      - type: C Matrix API
+      - type: APIReference
         url: https://www.mathworks.com/help/matlab/cc-mx-matrix-library.html
-      - type: MEX Function Reference
+      - type: APIReference
         url: https://www.mathworks.com/help/matlab/ref/mex.html
   - name: MATLAB Compiler SDK API
     description: >-
@@ -246,15 +246,15 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/compiler_sdk/
-      - type: Product Page
+      - type: Documentation
         url: https://www.mathworks.com/products/matlab-compiler-sdk.html
-      - type: Getting Started
+      - type: GettingStarted
         url: https://www.mathworks.com/help/compiler_sdk/getting_started_with_compiler_sdk.html
-      - type: C++ API Summary
+      - type: APIReference
         url: https://www.mathworks.com/help/compiler_sdk/cxx/summary-of-sdk-cpp-apis.html
-      - type: .NET API Summary
+      - type: APIReference
         url: https://www.mathworks.com/help/compiler_sdk/dotnet/summary-of-matlab-compiler-sdk-dotnet-apis.html
-      - type: Enterprise Deployment
+      - type: Documentation
         url: https://www.mathworks.com/help/compiler_sdk/mps.html
   - name: ThingSpeak REST API
     description: >-
@@ -271,13 +271,13 @@ apis:
     properties:
       - type: Documentation
         url: https://www.mathworks.com/help/thingspeak/index.html
-      - type: REST API Reference
+      - type: APIReference
         url: https://www.mathworks.com/help/thingspeak/rest-api.html
-      - type: Channels and Charts API
+      - type: APIReference
         url: https://www.mathworks.com/help/thingspeak/channels-and-charts-api.html
-      - type: Product Page
+      - type: Documentation
         url: https://www.mathworks.com/products/thingspeak.html
-      - type: GitHub Arduino Library
+      - type: GitHubRepository
         url: https://github.com/mathworks/thingspeak-arduino
 common:
   - type: Portal
@@ -290,16 +290,22 @@ common:
     url: https://blogs.mathworks.com/
   - type: Community
     url: https://www.mathworks.com/matlabcentral/
-  - type: Forum
+  - type: Community
     url: https://www.mathworks.com/matlabcentral/answers/index
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/mathworks
-  - type: Status
+  - type: StatusPage
     url: https://status.mathworks.com/
   - type: Support
     url: https://www.mathworks.com/support.html
   - type: Login
     url: https://www.mathworks.com/login
+  - type: Features
+    url: https://www.mathworks.com/products/matlab.html
+  - type: UseCases
+    url: https://www.mathworks.com/solutions.html
+  - type: Integrations
+    url: https://www.mathworks.com/products/connections.html
 maintainers:
   - name: Kin Lane
     email: kin@apievangelist.com
