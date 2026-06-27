@@ -27,7 +27,7 @@ apis:
         url: https://www.mathworks.com/help/matlab/matlab_external/get-started-with-matlab-engine-for-python.html
       - type: APIReference
         url: https://www.mathworks.com/help/matlab/apiref/matlab.engine.matlabengine-class.html
-      - type: SDK
+      - type: SDKs
         url: https://pypi.org/project/matlabengine/
       - type: GitHubRepository
         url: https://github.com/mathworks/matlab-engine-for-python
@@ -146,7 +146,7 @@ apis:
         url: https://www.mathworks.com/help/mps/restfuljson/restful-api-for-deployable-archive-upload.html
       - type: Documentation
         url: https://www.mathworks.com/help/mps/client-programming.html
-      - type: SDK
+      - type: SDKs
         url: https://www.mathworks.com/products/matlab-production-server/client-libraries.html
       - type: OpenAPI
         url: https://github.com/mathworks-ref-arch/openapi-productionserver

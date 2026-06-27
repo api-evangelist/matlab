@@ -3,13 +3,12 @@
   "feeds": [
     {
       "source": "https://blogs.mathworks.com/",
-      "error": "HTTPError"
-    },
-    {
-      "source": "https://www.mathworks.com/pricing-licensing.html",
-      "error": "HTTPError"
+      "feed_url": "",
+      "saved": 4,
+      "method": "agent-scrape"
     }
   ],
-  "fetched": "2026-06-14T20:42:17Z",
-  "post_count": 0
+  "fetched": "2026-06-27T12:53:28Z",
+  "post_count": 4,
+  "agent_pulled": "2026-06-27"
 }
