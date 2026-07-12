@@ -280,6 +280,8 @@ apis:
       - type: GitHubRepository
         url: https://github.com/mathworks/thingspeak-arduino
 common:
+  - type: DomainSecurity
+    url: security/matlab-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/the-mathworks_2
   - type: Portal
