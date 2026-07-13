@@ -2,13 +2,11 @@
   "repo": "matlab",
   "feeds": [
     {
-      "source": "https://blogs.mathworks.com/",
-      "feed_url": "",
-      "saved": 4,
-      "method": "agent-scrape"
+      "source": "https://www.mathworks.com/pricing-licensing.html",
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-06-27T12:53:28Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 4,
-  "agent_pulled": "2026-06-27"
+  "agent_pulled": "2026-07-04"
 }
