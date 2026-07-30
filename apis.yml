@@ -2,6 +2,18 @@ name: MATLAB
 description: >-
   APIs and integration points for MATLAB, a programming platform designed for engineers
   and scientists.
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
 url: https://www.mathworks.com
 created: '2025'
