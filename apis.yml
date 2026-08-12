@@ -292,6 +292,12 @@ apis:
       - type: GitHubRepository
         url: https://github.com/mathworks/thingspeak-arduino
 common:
+  - type: IssueTracker
+    url: https://github.com/mathworks/matlab-engine-for-python/issues
+  - type: Releases
+    url: https://github.com/mathworks/matlab-engine-for-python/releases
+  - type: SecurityPolicy
+    url: https://github.com/mathworks/matlab-engine-for-python/blob/R2026a/SECURITY.md
   - type: DomainSecurity
     url: security/matlab-domain-security.yml
   - type: LinkedIn
