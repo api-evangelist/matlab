@@ -2,6 +2,7 @@ name: MATLAB
 description: >-
   APIs and integration points for MATLAB, a programming platform designed for engineers
   and scientists.
+specificationVersion: '0.23'
 accessModel:
   pricing: freemium
   onboarding: unknown
