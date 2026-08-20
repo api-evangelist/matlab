@@ -176,6 +176,10 @@ apis:
     tags:
       - Deployment
       - Server
+      - Web App
+    tags_raw:
+      - Deployment
+      - Server
       - Web Apps
     properties:
       - type: Documentation
@@ -210,6 +214,10 @@ apis:
     humanURL: https://www.mathworks.com/help/matlab/http-interface.html
     baseURL: https://www.mathworks.com/help/matlab
     tags:
+      - Clients
+      - HTTP
+      - REST
+    tags_raw:
       - Client
       - HTTP
       - REST
@@ -334,6 +342,12 @@ maintainers:
     email: kin@apievangelist.com
     url: https://apievangelist.com
 tags:
+  - Data Analysis
+  - Engineering
+  - Machine-Learning
+  - Numerical Analysis
+  - Scientific Computing
+tags_raw:
   - Data Analysis
   - Engineering
   - Machine Learning
