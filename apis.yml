@@ -188,7 +188,7 @@ apis:
     tags:
       - Deployment
       - Server
-      - Web Apps
+      - Web App
     tags_raw:
       - Deployment
       - Server
