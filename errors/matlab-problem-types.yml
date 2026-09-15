@@ -1,0 +1,123 @@
+specification: API Commons Error Catalog
+specificationVersion: '0.1'
+provider: MATLAB
+providerId: matlab
+generated: '2026-09-14'
+method: searched
+source: >-
+  https://www.mathworks.com/help/thingspeak/error-codes.html (ThingSpeak) and
+  https://www.mathworks.com/help/mps/restfuljson/restful-api.html (MATLAB Production Server)
+format: vendor-json
+rfc9457: false
+note: >-
+  Neither surface uses RFC 9457 application/problem+json. ThingSpeak returns a vendor error object in
+  JSON or XML carrying code, message and details fields; MATLAB Production Server returns
+  {"error": {"message": "..."}}. Derived from no OpenAPI — there is none — so every entry below was
+  read from the provider's own published error reference.
+surfaces:
+  - api: ThingSpeak REST API
+    docs: https://www.mathworks.com/help/thingspeak/error-codes.html
+    media_types:
+      - application/json
+      - application/xml
+    envelope_fields:
+      - code
+      - message
+      - details
+  - api: MATLAB Production Server RESTful API
+    docs: https://www.mathworks.com/help/mps/restfuljson/restful-api.html
+    media_types:
+      - application/json
+    envelope_fields:
+      - error.message
+problem_types:
+  - id: error_bad_request
+    status: 400
+    title: Bad request
+    detail: The request cannot be fulfilled due to bad syntax.
+    api: ThingSpeak REST API
+    remediation: Check the request path, parameter names and value formats against the REST API reference.
+  - id: error_auth_required
+    status: 401
+    title: Authorization required
+    detail: Incorrect authentication details.
+    api: ThingSpeak REST API
+    remediation: Verify the API key. Read API Key for private channel reads, Write API Key for writes, User API Key for account-level operations.
+  - id: error_payment_required
+    status: 402
+    title: Payment required
+    detail: The message limit for your licence has been exceeded.
+    api: ThingSpeak REST API
+    remediation: >-
+      This is the quota exhaustion signal, not 429. Free licences allow 3 million messages/year;
+      a paid unit allows 33 million/year. See plans/matlab-plans-pricing.yml.
+  - id: error_resource_not_found
+    status: 404
+    title: Not found
+    detail: The requested resource was not found.
+    api: ThingSpeak REST API
+  - id: error_method_invalid
+    status: 405
+    title: Method not allowed
+    detail: The wrong HTTP method was used for the request.
+    api: ThingSpeak REST API
+  - id: error_conflict
+    status: 409
+    title: Conflict
+    detail: The request is in conflict with the current state.
+    api: ThingSpeak REST API
+  - id: error_request_too_large
+    status: 413
+    title: Request too large
+    detail: The request size exceeds the documented limits.
+    api: ThingSpeak REST API
+    remediation: Split bulk writes into smaller batches; image writes count as 100 messages each.
+  - id: error_no_action
+    status: 421
+    title: No action
+    detail: The server has no action to perform for this request.
+    api: ThingSpeak REST API
+  - id: error_invalid_byte_sequence
+    status: 422
+    title: Invalid byte sequence
+    detail: The input contains data that is not valid UTF-8.
+    api: ThingSpeak REST API
+  - id: error_too_many_requests
+    status: 429
+    title: Too many requests
+    detail: The rate limit was exceeded.
+    api: ThingSpeak REST API
+    remediation: >-
+      Back off and retry. The channel update interval is 15 seconds on a free licence and 1 second on a
+      paid licence. See rate-limits/matlab-rate-limits.yml.
+  - id: internal_server_error
+    status: 500
+    title: Internal server error
+    detail: An unexpected server condition prevented the request being fulfilled.
+    api: ThingSpeak REST API
+    note: Documented by status only; no vendor error code is published for 5xx.
+  - id: bad_gateway
+    status: 502
+    title: Bad gateway
+    detail: An invalid response was received from an upstream server.
+    api: ThingSpeak REST API
+    note: Documented by status only; no vendor error code is published for 5xx.
+  - id: service_unavailable
+    status: 503
+    title: Service unavailable
+    detail: The server is unavailable; retry later.
+    api: ThingSpeak REST API
+    note: Documented by status only; no vendor error code is published for 5xx.
+  - id: mps_error
+    status: null
+    title: MATLAB Production Server function error
+    detail: >-
+      Returned as {"error": {"message": "<description>"}} with an appropriate HTTP status. A failed
+      asynchronous request instead surfaces as state ERROR on the request resource.
+    api: MATLAB Production Server RESTful API
+    remediation: Poll {request.self} for state; ERROR is terminal and the message carries the MATLAB error text.
+counts:
+  total: 14
+  thingspeak: 13
+  matlab_production_server: 1
+  with_vendor_code: 10

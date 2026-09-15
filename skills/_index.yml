@@ -1,0 +1,124 @@
+specification: API Commons Agent Skills
+specificationVersion: '0.1'
+provider: MATLAB
+providerId: matlab
+generated: '2026-09-14'
+method: searched
+source: >-
+  https://github.com/matlab/matlab-agentic-toolkit,
+  https://github.com/matlab/simulink-agentic-toolkit and
+  https://github.com/matlab/agent-skills-playground — MathWorks' own GitHub organization (github.com/matlab),
+  enumerated through the GitHub REST tree API on 2026-09-14.
+note: >-
+  These are NOT skills API Evangelist wrote. MathWorks publishes 212 first-party Agent Skills of its own,
+  in Anthropic SKILL.md format with YAML frontmatter (name, description, license, metadata.author: MathWorks,
+  metadata.version), shipped as Claude Code plugin marketplaces (.claude-plugin/marketplace.json). The
+  matlab-agentic-toolkit declares a hard dependency on github.com/matlab/matlab-mcp-server, and individual
+  skills name that server's tools directly — matlab-review-code's own description reads "Uses
+  check_matlab_code and matlab_coding_guidelines". The skill layer and the MCP layer are one product here,
+  which is rare: most providers in this catalog ship one or the other.
+  No skill in this repository was authored by API Evangelist; the eight files under
+  skills/mathworks-matlab-core/ are saved verbatim from the provider.
+license: https://www.mathworks.com/content/dam/mathworks/license/pmrl/license.md
+format: Anthropic Agent Skill (SKILL.md + YAML frontmatter, optional references/ and scripts/)
+distribution: Claude Code plugin marketplace (.claude-plugin/marketplace.json), one plugin per skill group
+runtime_dependency:
+  mcp_server: https://github.com/matlab/matlab-mcp-server
+  declared_in: manifest.yaml -> dependencies[0].repo (default-version latest)
+totals:
+  published_skills: 212
+  repositories: 3
+  saved_verbatim_here: 8
+repositories:
+  - repo: matlab/matlab-agentic-toolkit
+    url: https://github.com/matlab/matlab-agentic-toolkit
+    description: The MATLAB Agentic Toolkit — trusted MATLAB capabilities exposed to AI agents as skills.
+    skills: 152
+    root: skills-catalog/
+    groups:
+      - { group: aerospace, skills: 2 }
+      - { group: ai-and-statistics, skills: 9 }
+      - { group: automotive, skills: 12 }
+      - { group: cloud-solutions, skills: 1 }
+      - { group: code-generation, skills: 5 }
+      - { group: computational-biology, skills: 3 }
+      - { group: computational-finance, skills: 4 }
+      - { group: control-systems, skills: 3 }
+      - { group: image-processing-and-computer-vision, skills: 10 }
+      - { group: math-and-optimization, skills: 3 }
+      - { group: matlab-app-building, skills: 3 }
+      - { group: matlab-core, skills: 8 }
+      - { group: matlab-data-import-and-analysis, skills: 4 }
+      - { group: matlab-environment-and-settings, skills: 1 }
+      - { group: matlab-external-language-interfaces, skills: 2 }
+      - { group: matlab-programming, skills: 1 }
+      - { group: matlab-software-development, skills: 7 }
+      - { group: parallel-computing, skills: 5 }
+      - { group: radar, skills: 4 }
+      - { group: reporting-and-database-access, skills: 4 }
+      - { group: rf-and-mixed-signal, skills: 21 }
+      - { group: robotics-and-autonomous-systems, skills: 6 }
+      - { group: signal-processing, skills: 11 }
+      - { group: test-and-measurement, skills: 13 }
+      - { group: wireless-communications, skills: 10 }
+  - repo: matlab/simulink-agentic-toolkit
+    url: https://github.com/matlab/simulink-agentic-toolkit
+    description: The Simulink Agentic Toolkit — Model-Based Design tools and expertise for AI agents.
+    skills: 31
+    root: skills-catalog/
+    groups:
+      - { group: code-generation, skills: 4 }
+      - { group: control-systems, skills: 3 }
+      - { group: model-based-design-core, skills: 9 }
+      - { group: model-based-system-engineering, skills: 1 }
+      - { group: signal-processing, skills: 1 }
+      - { group: simulink-environment-fundamentals, skills: 1 }
+      - { group: simulink-modeling, skills: 1 }
+      - { group: simulink-simulation, skills: 2 }
+      - { group: verification-validation-and-test, skills: 9 }
+  - repo: matlab/agent-skills-playground
+    url: https://github.com/matlab/agent-skills-playground
+    description: Sandbox for prototyping and demonstrating Agent Skills for MATLAB and Simulink.
+    skills: 29
+    root: demos/ and skills/
+    note: Demo/prototype tier — AI tutoring, course generation, MATLAB Grader assessment, MBSE, UI HTML app building.
+  - repo: matlab/mcp-framework-matlab-production-server
+    url: https://github.com/matlab/mcp-framework-matlab-production-server
+    description: >-
+      Ships two operator skills of its own under .claude/skills (mps-mcp-build, mps-review) so an agent
+      can build and deploy MATLAB functions as MCP tools on MATLAB Production Server.
+    skills: 2
+    counted_in_total: false
+related_repositories:
+  - { repo: matlab/rules, url: "https://github.com/matlab/rules", description: "MATLAB coding rules and guidelines for AI coding agents — the source behind the MCP server's two Resources." }
+  - { repo: matlab/prompts, url: "https://github.com/matlab/prompts", description: "Curated AI prompts for MATLAB development." }
+  - { repo: matlab/slash-commands, url: "https://github.com/matlab/slash-commands", description: "Slash commands for MATLAB development workflows across multiple AI coding agents." }
+  - { repo: matlab/matlab-ai-agent-sdk, url: "https://github.com/matlab/matlab-ai-agent-sdk", description: "Build and run AI agents in MATLAB." }
+saved:
+  - file: skills/mathworks-matlab-core/matlab-create-live-script.SKILL.md
+    name: matlab-create-live-script
+    source: https://github.com/matlab/matlab-agentic-toolkit/blob/main/skills-catalog/matlab-core/matlab-create-live-script/SKILL.md
+  - file: skills/mathworks-matlab-core/matlab-debug-code.SKILL.md
+    name: matlab-debug-code
+    version: '3.0'
+    source: https://github.com/matlab/matlab-agentic-toolkit/blob/main/skills-catalog/matlab-core/matlab-debug-code/SKILL.md
+  - file: skills/mathworks-matlab-core/matlab-install-products.SKILL.md
+    name: matlab-install-products
+    source: https://github.com/matlab/matlab-agentic-toolkit/blob/main/skills-catalog/matlab-core/matlab-install-products/SKILL.md
+  - file: skills/mathworks-matlab-core/matlab-list-products.SKILL.md
+    name: matlab-list-products
+    source: https://github.com/matlab/matlab-agentic-toolkit/blob/main/skills-catalog/matlab-core/matlab-list-products/SKILL.md
+  - file: skills/mathworks-matlab-core/matlab-read-documentation.SKILL.md
+    name: matlab-read-documentation
+    source: https://github.com/matlab/matlab-agentic-toolkit/blob/main/skills-catalog/matlab-core/matlab-read-documentation/SKILL.md
+  - file: skills/mathworks-matlab-core/matlab-review-code.SKILL.md
+    name: matlab-review-code
+    version: '1.1'
+    source: https://github.com/matlab/matlab-agentic-toolkit/blob/main/skills-catalog/matlab-core/matlab-review-code/SKILL.md
+  - file: skills/mathworks-matlab-core/matlab-run-tests.SKILL.md
+    name: matlab-run-tests
+    version: '1.0'
+    source: https://github.com/matlab/matlab-agentic-toolkit/blob/main/skills-catalog/matlab-core/matlab-run-tests/SKILL.md
+  - file: skills/mathworks-matlab-core/matlab-write-tests.SKILL.md
+    name: matlab-write-tests
+    source: https://github.com/matlab/matlab-agentic-toolkit/blob/main/skills-catalog/matlab-core/matlab-write-tests/SKILL.md

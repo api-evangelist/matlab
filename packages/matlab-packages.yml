@@ -1,0 +1,137 @@
+specification: API Commons Packages
+specificationVersion: '0.1'
+provider: MATLAB
+providerId: matlab
+generated: '2026-09-14'
+method: searched
+source: >-
+  PyPI JSON metadata endpoints (pypi.org/pypi/<pkg>/json), the GitHub REST API for github.com/mathworks,
+  github.com/mathworks-ref-arch and github.com/matlab, Docker Hub (hub.docker.com/v2/repositories/mathworks),
+  and the MathWorks client-libraries page at
+  https://www.mathworks.com/products/matlab-production-server/client-libraries.html
+note: >-
+  MathWorks distributes almost nothing through the general-purpose language registries. npm has no
+  MathWorks-maintained package (registry search for maintainer:mathworks returns 0), Maven Central has
+  nothing under g:com.mathworks (0 results), and the MATLAB Production Server client libraries for
+  C#, Java, C/C++ and Python are shipped only as per-release ZIP archives from ssd.mathworks.com —
+  no Maven/NuGet/PyPI coordinate exists for them, so a consumer cannot pin or diff them the way a
+  registry package allows. The MATLAB Engine for Python is the one exception and it is current.
+packages:
+  - name: matlabengine
+    registry: pypi
+    url: https://pypi.org/project/matlabengine/
+    language: Python
+    official: true
+    version: 26.1.12
+    published: '2026-05-08'
+    source_code: https://github.com/mathworks/matlab-engine-for-python
+    api: MATLAB Engine API for Python
+    note: >-
+      First-party (PyPI author "MathWorks", Homepage github.com/mathworks/matlab-engine-for-python).
+      Version tracks the MATLAB release — 26.1.x pairs with R2026a.
+  - name: matlab-proxy
+    registry: pypi
+    url: https://pypi.org/project/matlab-proxy/
+    language: Python
+    official: true
+    version: 0.34.0
+    published: '2026-07-23'
+    source_code: https://github.com/mathworks/matlab-proxy
+    note: Opens a MATLAB desktop in a browser tab; the transport layer under the Jupyter and container integrations.
+  - name: jupyter-matlab-proxy
+    registry: pypi
+    url: https://pypi.org/project/jupyter-matlab-proxy/
+    language: Python
+    official: true
+    version: 0.19.1
+    published: '2026-05-08'
+    source_code: https://github.com/mathworks/jupyter-matlab-proxy
+    note: MATLAB Integration for Jupyter. License field reads "MATHWORKS CLOUD REFERENCE ARCHITECTURE LICENSE".
+  - name: matlab-mcp-server
+    registry: github-releases
+    url: https://github.com/matlab/matlab-mcp-server/releases/latest
+    language: Go
+    official: true
+    version: v0.13.0
+    published: '2026-09-03'
+    source_code: https://github.com/matlab/matlab-mcp-server
+    install: go install github.com/matlab/matlab-mcp-server/cmd/matlab-mcp-server@latest
+    note: >-
+      Official MathWorks MCP server. Distributed as per-platform release binaries plus a
+      matlab-mcp-server.mcpb Claude Desktop bundle; also installable from source with `go install`.
+      It is not published to npm, PyPI or the Model Context Protocol registry — a registry search for
+      "matlab" and "io.github.matlab" on registry.modelcontextprotocol.io returned 0 servers on
+      2026-09-14, although the repo carries a .github/workflows/publish-registry.yml and a
+      .registry/server.template.json naming io.github.matlab/matlab-mcp-server.
+  - name: mathworks/matlab
+    registry: docker
+    url: https://hub.docker.com/r/mathworks/matlab
+    language: container
+    official: true
+    version: null
+    published: '2026-09-14'
+    source_code: https://github.com/mathworks-ref-arch/matlab-dockerfile
+    note: >-
+      Official MATLAB container image; `published` is the Docker Hub last_updated timestamp read from
+      hub.docker.com/v2. version is null because the image is tagged per MATLAB release (r2026a, latest)
+      rather than carrying a single registry version — a consumer reads the release from the tag.
+  - name: mathworks/matlab-deps
+    registry: docker
+    url: https://hub.docker.com/r/mathworks/matlab-deps
+    language: container
+    official: true
+    version: null
+    published: '2026-09-14'
+    note: OS dependencies for MATLAB and Simulink. Tagged per release; no single registry version.
+  - name: mathworks/matlab-runtime-deps
+    registry: docker
+    url: https://hub.docker.com/r/mathworks/matlab-runtime-deps
+    language: container
+    official: true
+    version: null
+    published: '2026-09-14'
+    note: Dependencies for MATLAB Runtime. Tagged per release; no single registry version.
+  - name: mathworks/matlab-deep-learning
+    registry: docker
+    url: https://hub.docker.com/r/mathworks/matlab-deep-learning
+    language: container
+    official: true
+    version: null
+    published: '2026-09-14'
+    note: MATLAB container including Deep Learning Toolbox. Tagged per release; no single registry version.
+  - name: MATLAB Production Server client libraries (C#, Java, C/C++, Python)
+    registry: none
+    url: https://www.mathworks.com/products/matlab-production-server/client-libraries.html
+    language: multi
+    official: true
+    version: null
+    published: null
+    api: MATLAB Production Server RESTful API
+    note: >-
+      Checked, nothing to record: these are distributed only as one ZIP per MATLAB release from
+      https://ssd.mathworks.com/supportfiles/matlabproductionserver/clientlibs/ (R2016a..R2026a).
+      There is no registry metadata endpoint to query and no published semantic version — the release
+      designation (R2026a) is the only identifier, and the download is not pinned by content hash.
+  - name: MATLAB Engine API for Java / C++ / C / Fortran / .NET
+    registry: none
+    url: https://www.mathworks.com/help/matlab/matlab-engine-api.html
+    language: multi
+    official: true
+    version: null
+    published: null
+    note: >-
+      Checked, nothing to record: these engine bindings ship inside the MATLAB installation
+      (extern/engines/...) rather than through any package registry, so there is no version or date to
+      read. Only the Python binding is registry-distributed (matlabengine, above).
+counts:
+  total: 10
+  official: 10
+  with_version: 5
+  registries:
+    pypi: 3
+    docker: 4
+    github-releases: 1
+    none: 2
+  npm: 0
+  maven: 0
+  nuget: 0

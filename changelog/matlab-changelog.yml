@@ -1,0 +1,67 @@
+specification: API Commons ChangeLog
+specificationVersion: '0.1'
+provider: MATLAB
+providerId: matlab
+generated: '2026-09-14'
+method: searched
+source: >-
+  https://github.com/matlab/matlab-mcp-server/releases (GitHub Releases API, read 2026-09-14) and
+  https://www.mathworks.com/help/matlab/release-notes.html
+note: >-
+  MathWorks publishes no dated changelog for either HTTP API. The ThingSpeak REST API has no changelog
+  at all, and MATLAB's own release notes are organised by release designation rather than by date.
+  The only dated, machine-readable change feed on the whole MathWorks agent surface is the GitHub
+  release history of the MATLAB MCP Server, so that is what is recorded here — an honest reading of
+  where change is actually published.
+streams:
+  - name: MATLAB MCP Server releases
+    url: https://github.com/matlab/matlab-mcp-server/releases
+    scheme: semver (pre-1.0)
+    current_version: v0.13.0
+    dated: true
+    machine_readable: true
+    entries:
+      - { version: v0.13.0, date: '2026-09-03' }
+      - { version: v0.12.0, date: '2026-08-20' }
+      - { version: v0.11.4, date: '2026-08-14' }
+      - { version: v0.11.3, date: '2026-08-06' }
+      - { version: v0.11.2, date: '2026-07-10' }
+      - { version: v0.11.1, date: '2026-06-25' }
+      - { version: v0.11.0, date: '2026-06-18' }
+      - { version: v0.10.1, date: '2026-06-10' }
+      - { version: v0.10.0, date: '2026-05-27' }
+      - { version: v0.9.2, date: '2026-05-21' }
+    note: >-
+      Ten releases in roughly fifteen weeks. Release titles are bare version strings; the per-release
+      notes carry the detail. Pre-1.0, so tool signatures may still change.
+  - name: MATLAB and Simulink Release Notes
+    url: https://www.mathworks.com/help/matlab/release-notes.html
+    scheme: release-designation (R2026a, R2026b)
+    dated: false
+    machine_readable: partial
+    machine_readable_note: >-
+      MathWorks serves a dedicated llms.txt for release notes at
+      https://www.mathworks.com/help/relnotes/llms.txt (HTTP 200, 2,507 bytes on 2026-09-14) — an index
+      for agents rather than a structured changelog.
+    sections:
+      - Highlights
+      - Incompatibilities
+      - Functionality being removed or changed
+  - name: MATLAB Production Server client libraries
+    url: https://www.mathworks.com/products/matlab-production-server/client-libraries.html
+    scheme: per-release archive
+    dated: false
+    range: R2016a .. R2026a
+  - name: MCP Framework for MATLAB Production Server
+    url: https://github.com/matlab/mcp-framework-matlab-production-server/blob/main/ReleaseNotes.md
+    dated: unknown
+    machine_readable: false
+covered_apis:
+  - MATLAB MCP Server
+  - MATLAB Production Server RESTful API
+gaps:
+  - api: ThingSpeak REST API
+    changelog: none
+    note: >-
+      No changelog, no release notes and no API version. A ThingSpeak integration has no published way
+      to learn that the API changed.

@@ -1,7 +1,12 @@
 name: MATLAB
 description: >-
-  APIs and integration points for MATLAB, a programming platform designed for engineers
-  and scientists.
+  MATLAB is the MathWorks programming platform for engineers and scientists, and its interface surface
+  is unusually split. Most of it is in-process language bindings — the MATLAB Engine APIs for Python,
+  Java, C++, C, Fortran and .NET, the MEX API, the C++ Data API and the Compiler SDK — which embed
+  MATLAB into other programs rather than exposing it over HTTP. Two surfaces are callable over the
+  network: the ThingSpeak REST and MQTT APIs for IoT channel data, hosted by MathWorks, and the
+  MATLAB Production Server RESTful API, which customers run themselves. On top of both sits a large
+  first-party agent layer: the official MATLAB MCP Server and 212 published Agent Skills.
 deliveryModel:
   model: unknown
   open_source: unknown
@@ -30,7 +35,7 @@ accessModel:
 image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
 url: https://www.mathworks.com
 created: '2025'
-modified: '2026-04-19'
+modified: '2026-09-14'
 apis:
   - name: MATLAB Engine API for Python
     description: >-
@@ -313,6 +318,10 @@ apis:
       - type: GitHubRepository
         url: https://github.com/mathworks/thingspeak-arduino
 common:
+  - type: Website
+    url: https://www.mathworks.com
+  - type: VulnerabilityDisclosure
+    url: security/matlab-vulnerability-disclosure.yml
   - type: IssueTracker
     url: https://github.com/mathworks/matlab-engine-for-python/issues
   - type: Releases
@@ -349,6 +358,56 @@ common:
     url: https://www.mathworks.com/solutions.html
   - type: Integrations
     url: https://www.mathworks.com/products/connections.html
+  - type: Packages
+    url: packages/matlab-packages.yml
+  - type: SDKs
+    url: packages/matlab-packages.yml
+  - type: MCPServer
+    url: mcp/matlab-mcp.yml
+  - type: AgentSkill
+    url: skills/_index.yml
+  - type: LLMsTxt
+    url: llms/matlab-llms.txt
+  - type: WellKnown
+    url: well-known/matlab-well-known.yml
+  - type: SecurityTxt
+    url: well-known/matlab-security.txt
+  - type: Security
+    url: security/matlab-vulnerability-disclosure.yml
+  - type: TrustCenter
+    url: security/matlab-trust-center.yml
+  - type: Compliance
+    url: security/matlab-trust-center.yml
+  - type: Conformance
+    url: conformance/matlab-conformance.yml
+  - type: ErrorCatalog
+    url: errors/matlab-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/matlab-lifecycle.yml
+  - type: Deprecation
+    url: lifecycle/matlab-lifecycle.yml
+  - type: Authentication
+    url: authentication/matlab-authentication.yml
+  - type: Conventions
+    url: conventions/matlab-conventions.yml
+  - type: ChangeLog
+    url: changelog/matlab-changelog.yml
+  - type: CLI
+    url: cli/matlab-cli.yml
+  - type: Webhooks
+    url: asyncapi/matlab-thingspeak-events.yml
+  - type: Plans
+    url: plans/matlab-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/matlab-rate-limits.yml
+  - type: FinOps
+    url: finops/matlab-finops.yml
+  - type: TermsOfService
+    url: https://www.mathworks.com/matlabcentral/content/terms-of-use.html
+  - type: PrivacyPolicy
+    url: https://www.mathworks.com/company/aboutus/policies_statements/privacy-policy.html
+  - type: SignUp
+    url: https://www.mathworks.com/mwaccount/register
 maintainers:
   - name: Kin Lane
     email: kin@apievangelist.com
@@ -365,3 +424,8 @@ tags_raw:
   - Machine Learning
   - Numerical Analysis
   - Scientific Computing
+x-enrichment:
+  date: '2026-09-14'
+  status: enriched
+  artifacts_added: 24
+  pass: local-v3

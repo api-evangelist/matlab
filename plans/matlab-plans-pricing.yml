@@ -4,222 +4,154 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: MATLAB
 providerId: matlab
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
-tags:
-  - Data Analysis
-  - Engineering
-  - Machine Learning
-  - Numerical Analysis
-  - Scientific Computing
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+modified: '2026-09-14'
+generated: '2026-09-14'
+method: searched
+source: >-
+  https://www.mathworks.com/pricing-licensing.html,
+  https://thingspeak.mathworks.com/prices,
+  https://thingspeak.mathworks.com/pages/license_faq
+note: >-
+  Replaces the 2026-05-04 generated scaffold, whose "matlab-free" tier with 1,000 requests/month and
+  10 requests/minute was invented and was never published by MathWorks. What MathWorks actually sells
+  is PRODUCT licences, not API plans — the APIs come with the product — plus a separately licensed
+  ThingSpeak service metered in messages. Both are recorded below. Where a price is not published,
+  price is null with a note rather than a guess.
+currency: USD
+billing_model: annual product licence (MATLAB) + annual metered service licence (ThingSpeak)
 plans:
-  - id: matlab-free
-    name: Free
+  - id: matlab-standard
+    name: Standard
+    product: MATLAB
+    type: commercial
+    price: '940.00'
+    currency: USD
+    period: year
+    description: >-
+      Commercial, government or other organizational use. Includes MATLAB, Simulink, Online Training
+      Suite and other add-on products, plus MathWorks Software Maintenance Service.
+    source: https://www.mathworks.com/pricing-licensing.html
+  - id: matlab-individual
+    name: Individual
+    product: MATLAB
+    type: commercial
+    price: '940.00'
+    currency: USD
+    period: year
+    description: Individual commercial licence. Same product bundle and price as Standard.
+    source: https://www.mathworks.com/pricing-licensing.html
+  - id: matlab-startup
+    name: Startup
+    product: MATLAB
+    type: commercial
+    price: null
+    currency: USD
+    period: year
+    description: For approved early-stage companies. Includes MATLAB, Simulink and 90+ add-on products.
+    price_note: Quote only — no price published.
+    source: https://www.mathworks.com/pricing-licensing.html
+  - id: matlab-academic
+    name: Academic
+    product: MATLAB
+    type: academic
+    price: null
+    period: year
+    description: Teaching and research at degree-granting institutions.
+    price_note: Quote only — no price published.
+    source: https://www.mathworks.com/pricing-licensing.html
+  - id: matlab-campus-wide
+    name: Campus-Wide License
+    product: MATLAB
+    type: academic
+    price: null
+    period: year
+    description: Unlimited institutional access for all faculty, staff and researchers, on and off campus.
+    price_note: Quote only — no price published.
+    source: https://www.mathworks.com/pricing-licensing.html
+  - id: matlab-student
+    name: Student
+    product: MATLAB
+    type: academic
+    price: null
+    period: year
+    description: For use in conjunction with courses offered at a degree-granting institution.
+    price_note: Quote only — no price published on the pricing landing page.
+    source: https://www.mathworks.com/pricing-licensing.html
+  - id: matlab-home
+    name: Home
+    product: MATLAB
+    type: personal
+    price: null
+    period: year
+    description: Personal use only. Not for government, academic, commercial or organizational use.
+    price_note: Quote only — no price published on the pricing landing page.
+    source: https://www.mathworks.com/pricing-licensing.html
+  - id: thingspeak-free
+    name: ThingSpeak Free
+    product: ThingSpeak
     type: freemium
-    description: Free entry tier for the MATLAB API surface. Intended for evaluation, prototyping, and
-      low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
+    price: '0.00'
+    currency: USD
+    period: year
+    description: Non-commercial small projects.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://www.mathworks.com/help/matlab/apiref
-          - https://www.mathworks.com/products/matlab-production-server.html
-          - https://www.mathworks.com/help/mps
-          - https://www.mathworks.com/help/webappserver
-          - https://www.mathworks.com/help/matlab
-          - https://www.mathworks.com/help/compiler_sdk
-          - https://api.thingspeak.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://www.mathworks.com/help/matlab/apiref
-          - https://www.mathworks.com/products/matlab-production-server.html
-          - https://www.mathworks.com/help/mps
-          - https://www.mathworks.com/help/webappserver
-          - https://www.mathworks.com/help/matlab
-          - https://www.mathworks.com/help/compiler_sdk
-          - https://api.thingspeak.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: MATLAB Engine API for Python
-      - name: MATLAB Engine API for Java
-      - name: MATLAB Engine API for C++
-      - name: MATLAB Engine API for C and Fortran
-      - name: MATLAB Engine API for .NET
-      - name: MATLAB RESTful Web Services
-      - name: MATLAB Production Server RESTful API
-      - name: MATLAB Web App Server
-  - id: matlab-pro
-    name: Professional
-    type: paid
-    description: Production tier for MATLAB. Provides higher quotas, priority support, and access to the
-      broader API portfolio. Pricing placeholder; align with the provider's pricing page.
+      - { label: Messages, name: messages, type: quota, metric: messages, limit: 3000000, timeFrame: year, unit: 1, price: '0.00' }
+      - { label: Stored messages, name: messages_stored, type: quota, metric: messages_stored, limit: 10000000 }
+      - { label: Channels, name: channels, type: quota, metric: channels, limit: 4 }
+      - { label: Update interval, name: update_interval, type: rate, metric: seconds_between_updates, limit: 15 }
+    source: https://thingspeak.mathworks.com/pages/license_faq
+  - id: thingspeak-standard
+    name: ThingSpeak Standard
+    product: ThingSpeak
+    type: commercial
+    price: null
+    currency: USD
+    period: year
+    description: >-
+      Commercial, government or other organizational use. Sold in units; one unit allows 33 million
+      messages processed and stored in a one-year period and up to 250 channels, at an update interval
+      as fast as once per second. Includes technical support and extended MATLAB compute timeouts.
+    price_note: >-
+      No price is published. As of 2026-09-14 the page reads "Purchase options are temporarily
+      unavailable. Check back later." and the unit calculator shows no cost figures.
     entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://www.mathworks.com/help/matlab/apiref
-          - https://www.mathworks.com/products/matlab-production-server.html
-          - https://www.mathworks.com/help/mps
-          - https://www.mathworks.com/help/webappserver
-          - https://www.mathworks.com/help/matlab
-          - https://www.mathworks.com/help/compiler_sdk
-          - https://api.thingspeak.com
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://www.mathworks.com/help/matlab/apiref
-          - https://www.mathworks.com/products/matlab-production-server.html
-          - https://www.mathworks.com/help/mps
-          - https://www.mathworks.com/help/webappserver
-          - https://www.mathworks.com/help/matlab
-          - https://www.mathworks.com/help/compiler_sdk
-          - https://api.thingspeak.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: global
-        domains:
-          - https://www.mathworks.com/help/matlab/apiref
-          - https://www.mathworks.com/products/matlab-production-server.html
-          - https://www.mathworks.com/help/mps
-          - https://www.mathworks.com/help/webappserver
-          - https://www.mathworks.com/help/matlab
-          - https://www.mathworks.com/help/compiler_sdk
-          - https://api.thingspeak.com
-        unit: 1000
-        price: TBD
-        userMultiplied: false
-    elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: MATLAB Engine API for Python
-      - name: MATLAB Engine API for Java
-      - name: MATLAB Engine API for C++
-      - name: MATLAB Engine API for C and Fortran
-      - name: MATLAB Engine API for .NET
-      - name: MATLAB RESTful Web Services
-      - name: MATLAB Production Server RESTful API
-      - name: MATLAB Web App Server
-      - name: MATLAB Data API for C++
-      - name: MATLAB HTTP Interface
-      - name: MATLAB MEX API
-      - name: MATLAB Compiler SDK API
-      - name: ThingSpeak REST API
-  - id: matlab-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for MATLAB. Includes dedicated capacity, contractual SLAs, security
-      review, data residency options, and named technical account management.
-    entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://www.mathworks.com/help/matlab/apiref
-          - https://www.mathworks.com/products/matlab-production-server.html
-          - https://www.mathworks.com/help/mps
-          - https://www.mathworks.com/help/webappserver
-          - https://www.mathworks.com/help/matlab
-          - https://www.mathworks.com/help/compiler_sdk
-          - https://api.thingspeak.com
-        unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://www.mathworks.com/help/matlab/apiref
-          - https://www.mathworks.com/products/matlab-production-server.html
-          - https://www.mathworks.com/help/mps
-          - https://www.mathworks.com/help/webappserver
-          - https://www.mathworks.com/help/matlab
-          - https://www.mathworks.com/help/compiler_sdk
-          - https://api.thingspeak.com
-        unit: 1
-        price: custom
-        userMultiplied: false
-    elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: MATLAB Engine API for Python
-      - name: MATLAB Engine API for Java
-      - name: MATLAB Engine API for C++
-      - name: MATLAB Engine API for C and Fortran
-      - name: MATLAB Engine API for .NET
-      - name: MATLAB RESTful Web Services
-      - name: MATLAB Production Server RESTful API
-      - name: MATLAB Web App Server
-      - name: MATLAB Data API for C++
-      - name: MATLAB HTTP Interface
-      - name: MATLAB MEX API
-      - name: MATLAB Compiler SDK API
-      - name: ThingSpeak REST API
-maintainers:
-  - name: Kin Lane
-    email: kin@apievangelist.com
-    url: https://apievangelist.com
+      - { label: Messages per unit, name: messages, type: quota, metric: messages, limit: 33000000, timeFrame: year, unit: 1 }
+      - { label: Channels per unit, name: channels, type: quota, metric: channels, limit: 250 }
+      - { label: Update interval, name: update_interval, type: rate, metric: seconds_between_updates, limit: 1 }
+    source: https://thingspeak.mathworks.com/prices/thingspeak_standard
+  - id: thingspeak-academic
+    name: ThingSpeak Academic
+    product: ThingSpeak
+    type: academic
+    price: null
+    period: year
+    description: Teaching and academic research at a degree-granting institution.
+    price_note: No price published.
+    source: https://thingspeak.mathworks.com/prices
+  - id: thingspeak-student
+    name: ThingSpeak Student
+    product: ThingSpeak
+    type: academic
+    price: null
+    period: year
+    description: For use in conjunction with courses offered at a degree-granting institution.
+    price_note: No price published.
+    source: https://thingspeak.mathworks.com/prices/thingspeak_student
+  - id: thingspeak-home
+    name: ThingSpeak Home
+    product: ThingSpeak
+    type: personal
+    price: null
+    period: year
+    description: Personal use only. Not for government, academic, commercial or other organizational use.
+    price_note: No price published.
+    source: https://thingspeak.mathworks.com/prices/thingspeak_home
+metering:
+  unit: message
+  definition: >-
+    A write of up to 8 fields of data to a ThingSpeak channel. REST writes, MQTT writes, MATLAB
+    Analysis outputs and React/TimeControl triggers all count as messages; an image write costs 100.
+  overage_behaviour: HTTP 402 error_payment_required once the annual allowance is spent.
+  source: https://thingspeak.mathworks.com/pages/license_faq
+plan_count: 13
+priced_plan_count: 3

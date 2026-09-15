@@ -1,0 +1,164 @@
+specification: API Commons MCP Server
+specificationVersion: '0.1'
+provider: MATLAB
+providerId: matlab
+generated: '2026-09-14'
+method: searched
+status: published
+source: >-
+  https://github.com/matlab/matlab-mcp-server (official MathWorks repo, README + .registry/server.template.json),
+  https://www.mathworks.com/products/matlab-mcp-server.html, and
+  https://github.com/matlab/mcp-framework-matlab-production-server
+name: MATLAB MCP Server
+title: MATLAB MCP Server
+description: >-
+  The official MathWorks MCP server. Lets an AI application start and quit MATLAB, write and run
+  MATLAB code, run MATLAB unit tests, and statically analyse MATLAB code for style and correctness.
+authorship: first-party
+vendor: The MathWorks, Inc.
+license: see https://github.com/matlab/matlab-mcp-server/blob/main/LICENSE.md
+repository: https://github.com/matlab/matlab-mcp-server
+homepage: https://www.mathworks.com/products/matlab-mcp-server.html
+version: v0.13.0
+released: '2026-09-03'
+implementation_language: Go
+deployment:
+  mode: local-stdio
+  endpoint: null
+  install: "claude mcp add --transport stdio matlab -- /fullpath/to/matlab-mcp-server-binary"
+  package: https://github.com/matlab/matlab-mcp-server/releases/latest
+  auth: none
+  verified: searched
+  note: >-
+    MathWorks hosts no MCP endpoint. The server is a local process an operator downloads (release
+    binary per platform, a matlab-mcp-server.mcpb bundle for Claude Desktop, or `go install`) and
+    runs over stdio against a MATLAB installation on the same machine (MATLAB R2021a or later, on
+    PATH). Transport is declared stdio in the provider's own registry template
+    (.registry/server.template.json -> packages[0].transport.type = "stdio"). Auth is `none` because
+    the trust boundary is the local machine and the MATLAB licence, not a token.
+self_hosted_remote:
+  available: true
+  product: MCP Framework for MATLAB Production Server
+  repository: https://github.com/matlab/mcp-framework-matlab-production-server
+  homepage: https://www.mathworks.com/products/mcp-framework-matlab-production-server.html
+  transport:
+    - streamable-http
+    - sse
+  endpoint_template: "http://{mps-host}:{port}/{archive}/mcp"
+  additional_paths:
+    - "/{archive}/sse"
+    - "/{archive}/signature"
+    - "/{archive}/ping"
+    - "/mcp"
+    - "/sse"
+    - "/signature"
+    - "/ping"
+  evidence: >-
+    Route patterns read verbatim from the framework's own first-party route maps,
+    +prodserver/+mcp/+internal/archive_routes.json and instance_routes.json.
+  requires:
+    - MATLAB R2025b or later
+    - MATLAB Compiler SDK
+    - MATLAB Production Server R2022a or later
+  note: >-
+    Recorded separately from `deployment` ON PURPOSE. This framework lets a CUSTOMER publish their own
+    MATLAB functions as MCP tools on their own MATLAB Production Server instance. The endpoint is
+    templated on the customer's host — MathWorks operates no instance of it — so no agent can reach a
+    MathWorks-hosted MCP URL today. Counting it as `mode: remote` would assert a reachable agent
+    surface that does not exist.
+registries:
+  - registry: modelcontextprotocol.io
+    listed: false
+    probed: '2026-09-14'
+    evidence: >-
+      GET https://registry.modelcontextprotocol.io/v0/servers?search=matlab and ?search=io.github.matlab
+      both returned {"servers":[],"metadata":{"count":0}} (HTTP 200).
+    note: >-
+      The repo ships .github/workflows/publish-registry.yml and a server.template.json declaring the
+      name io.github.matlab/matlab-mcp-server, so publication is wired but not visible in the registry.
+tools:
+  - name: detect_matlab_toolboxes
+    description: Returns information about the installed MATLAB and its toolboxes, including version numbers.
+    inputs: []
+    destructive: false
+  - name: check_matlab_code
+    description: >-
+      Static code analysis on a MATLAB script. Returns warnings about coding style, potential errors,
+      deprecated functions, performance issues and best-practice violations. Non-destructive, read-only;
+      the file is not modified.
+    inputs:
+      - name: script_path
+        type: string
+        required: true
+        description: Absolute path to the MATLAB script file to analyze. Must be a valid .m file.
+    destructive: false
+  - name: evaluate_matlab_code
+    description: Evaluates a string of MATLAB code and returns the output.
+    inputs:
+      - name: code
+        type: string
+        required: true
+        description: MATLAB code to evaluate.
+      - name: project_path
+        type: string
+        required: true
+        description: Absolute path to the project directory MATLAB sets as the current working folder.
+    destructive: true
+    note: Arbitrary code execution on the operator's machine. MathWorks' own README asks for a human in the loop.
+  - name: run_matlab_file
+    description: Executes a MATLAB script and returns the output. The script must be a valid .m file.
+    inputs:
+      - name: script_path
+        type: string
+        required: true
+        description: Absolute path to the MATLAB script file to execute.
+    destructive: true
+  - name: run_matlab_test_file
+    description: >-
+      Executes a MATLAB test script following MATLAB testing-framework conventions and returns
+      comprehensive test results.
+    inputs:
+      - name: script_path
+        type: string
+        required: true
+        description: Absolute path to the MATLAB unit-test file.
+    destructive: false
+resources:
+  - name: matlab_coding_guidelines
+    uri: guidelines://coding
+    mime_type: text/markdown
+    source: https://github.com/matlab/rules/blob/main/matlab-coding-standards.md
+    description: MATLAB coding standards — naming, formatting, commenting, performance, error handling.
+  - name: plain_text_live_code_guidelines
+    uri: guidelines://plain-text-live-code
+    mime_type: text/markdown
+    source: https://github.com/matlab/rules/blob/main/live-script-generation.md
+    description: Rules for generating live scripts in the plain-text Live Code .m format (MATLAB R2025a+).
+configuration:
+  env_prefix: MW_MCP_SERVER_
+  arguments:
+    - matlab-root
+    - initialize-matlab-on-startup
+    - initial-working-folder
+    - matlab-display-mode
+    - matlab-session-mode
+    - extension-file
+    - log-folder
+    - log-level
+    - disable-telemetry
+  extensible: true
+  extension_note: >-
+    --extension-file accepts JSON files defining custom tools, so an operator can add their own tools
+    to this server. Documented at guides/custom-tools.md in the repo.
+telemetry:
+  collected: true
+  default: on
+  opt_out: "--disable-telemetry=true"
+  note: MathWorks states the data is fully anonymized. Disclosed in the README under "Data Collection".
+clients_documented:
+  - Claude Code
+  - Claude Desktop
+  - GitHub Copilot in Visual Studio Code
+  - Codex
+tool_count: 5
+resource_count: 2

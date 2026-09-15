@@ -1,0 +1,382 @@
+# llms.txt for MathWorks
+
+This file provides a structured index of MathWorks products, documentation, and learning resources for use by large language models and AI agents.
+
+Canonical site: https://www.mathworks.com
+Last updated: 2025-02-25
+
+## Primary Entry Points
+
+- Help Center: https://www.mathworks.com/help/
+- MATLAB documentation: https://www.mathworks.com/help/matlab/
+- Product catalog: https://www.mathworks.com/products/
+- Simulink documentation: https://www.mathworks.com/help/simulink/
+
+# MathWorks
+
+> MathWorks is the developer of MATLAB and Simulink. MATLAB is a programming language and environment for numerical computing, data analysis, and algorithm development. Simulink is a block diagram environment for multidomain simulation and Model-Based Design of dynamic systems.
+
+MathWorks provides software for engineers and scientists to analyze data, develop algorithms, and create models. The two flagship products are:
+
+- **MATLAB**: A matrix-based language for technical computing that integrates computation, visualization, and programming
+- **Simulink**: A graphical environment for modeling, simulating, and analyzing dynamic systems
+
+## Products
+
+### Core Products
+- [Database Toolbox](https://www.mathworks.com/products/database.html): Connect to relational and NoSQL databases from MATLAB.
+- [Mapping Toolbox](https://www.mathworks.com/products/mapping.html): Analyze and visualize geographic information.
+- [MATLAB](https://www.mathworks.com/products/matlab.html): Programming environment for numerical computing, data analysis, and visualization. Key areas: statistical analysis, deep learning, signal analysis, image processing.
+- [MATLAB Copilot](https://www.mathworks.com/products/matlab-copilot.html): AI assistant optimized for MATLAB.
+- [MATLAB Grader](https://www.mathworks.com/products/matlab-grader.html): Automatically grade MATLAB code in any learning environment.
+- [MATLAB Mobile](https://www.mathworks.com/products/matlab-mobile.html): Run MATLAB commands from your mobile device.
+- [MATLAB Online](https://www.mathworks.com/products/matlab-online.html): Use MATLAB through your web browser.
+- [MATLAB Parallel Server](https://www.mathworks.com/products/matlab-parallel-server.html): Scale MATLAB and Simulink workloads to clusters and the cloud.
+- [MATLAB Report Generator](https://www.mathworks.com/products/matlab-report-generator.html): Generate reports from MATLAB programs.
+- [MATLAB Test](https://www.mathworks.com/products/matlab-test.html): Write, manage, and run unit tests for MATLAB code.
+- [MATLAB Web App Server](https://www.mathworks.com/products/matlab-web-app-server.html): Host MATLAB web apps and Simulink simulations.
+- [Parallel Computing Toolbox](https://www.mathworks.com/products/parallel-computing.html): Run computations on multicore CPUs, GPUs, and clusters.
+- [Simulink](https://www.mathworks.com/products/simulink.html): Block diagram environment for multidomain modeling, simulation, and deployment. Key areas: control systems, embedded systems, multi-domain modeling, testing and validation.
+- [Spreadsheet Link](https://www.mathworks.com/products/spreadsheet-link.html): Integrate MATLAB with Microsoft Excel.
+- [Stateflow](https://www.mathworks.com/products/stateflow.html): Model and simulate decision logic and state machines.
+
+### AI and Data Science
+- [Bioinformatics Toolbox](https://www.mathworks.com/products/bioinfo.html): Analyze genomic and proteomic data.
+- [Computer Vision Toolbox](https://www.mathworks.com/products/computer-vision.html): Design, test, and analyze computer vision systems. Key areas: object detection and tracking, visual SLAM, pose estimation, camera calibration.
+- [Deep Learning HDL Toolbox](https://www.mathworks.com/products/deep-learning-hdl.html): Deploy deep learning networks on FPGAs and SoCs.
+- [Deep Learning Toolbox](https://www.mathworks.com/products/deep-learning.html): Design and train deep learning networks. Key areas: embedded AI, computer vision, time-series forecasting, physics-informed ML.
+- [Image Processing Toolbox](https://www.mathworks.com/products/image.html): Image processing, visualization, and analysis. Key areas: filtering, segmentation, registration, geometric transformations.
+- [Medical Imaging Toolbox](https://www.mathworks.com/products/medical-imaging.html): Visualize, register, segment, and analyze 2D and 3D medical images.
+- [Predictive Maintenance Toolbox](https://www.mathworks.com/products/predictive-maintenance.html): Condition monitoring and predictive maintenance algorithms. Key areas: fault detection, remaining useful life estimation, synthetic data generation.
+- [Reinforcement Learning Toolbox](https://www.mathworks.com/products/reinforcement-learning.html): Design and train policies using reinforcement learning. Key areas: RL agents, policy representation, environment modeling, code generation.
+- [Statistics and Machine Learning Toolbox](https://www.mathworks.com/products/statistics.html): Classification, clustering, anomaly detection, Monte Carlo simulation, and AutoML.
+- [Text Analytics Toolbox](https://www.mathworks.com/products/text-analytics.html): Analyze and model text data.
+- [Vision HDL Toolbox](https://www.mathworks.com/products/vision-hdl.html): Design and implement image processing and computer vision systems on FPGAs and ASICs.
+
+### Signal Processing and Communications
+- [5G Toolbox](https://www.mathworks.com/products/5g.html): 5G NR simulation and test.
+- [Antenna Toolbox](https://www.mathworks.com/products/antenna.html): Design and analyze antenna elements and arrays.
+- [Audio Toolbox](https://www.mathworks.com/products/audio.html): Design and analyze audio processing systems.
+- [Bluetooth Toolbox](https://www.mathworks.com/products/bluetooth.html): Bluetooth simulation and test. Key areas: coexistence modeling, localization, network modeling.
+- [Communications Toolbox](https://www.mathworks.com/products/communications.html): Physical layer design with waveform generation, channel modeling, MIMO, and SDR.
+- [DSP HDL Toolbox](https://www.mathworks.com/products/dsp-hdl.html): Design and implement DSP algorithms on FPGAs and ASICs.
+- [DSP System Toolbox](https://www.mathworks.com/products/dsp-system.html): Design and simulate signal processing systems.
+- [Fixed-Point Designer](https://www.mathworks.com/products/fixed-point-designer.html): Design and simulate fixed-point systems.
+- [LTE Toolbox](https://www.mathworks.com/products/lte.html): LTE and LTE-Advanced simulation and test.
+- [Mixed-Signal Blockset](https://www.mathworks.com/products/mixed-signal.html): PLL, ADC/DAC design, and phase noise/jitter analysis.
+- [Phased Array System Toolbox](https://www.mathworks.com/products/phased-array.html): Phased array beamforming, DOA estimation, radar, and sonar.
+- [Radar Toolbox](https://www.mathworks.com/products/radar.html): Design and analyze radar systems including SAR and bistatic radar.
+- [RF Blockset](https://www.mathworks.com/products/rf-blockset.html): Simulate RF systems with MIMO, beamforming, and transceiver modeling.
+- [RF PCB Toolbox](https://www.mathworks.com/products/rf-pcb.html): Design and analyze high-speed and RF multilayer PCBs.
+- [RF Toolbox](https://www.mathworks.com/products/rf.html): S-parameter analysis, RF budget analysis, and RF system simulation.
+- [Satellite Communications Toolbox](https://www.mathworks.com/products/satellite-communications.html): Satellite communications simulation. Key areas: orbit propagation, link budget analysis, channel modeling.
+- [Signal Integrity Toolbox](https://www.mathworks.com/products/signal-integrity.html): High-speed serial/parallel link analysis and IBIS-AMI modeling.
+- [Signal Processing Toolbox](https://www.mathworks.com/products/signal.html): Filter design, spectral analysis, and signal measurements.
+- [Wavelet Toolbox](https://www.mathworks.com/products/wavelet.html): Analyze and synthesize signals and images using wavelet techniques.
+- [Wireless HDL Toolbox](https://www.mathworks.com/products/wireless-hdl.html): Design and implement wireless communications algorithms on FPGAs and ASICs.
+- [Wireless Testbench](https://www.mathworks.com/products/wireless-testbench.html): Test and verify wireless communications designs.
+- [WLAN Toolbox](https://www.mathworks.com/products/wlan.html): WLAN (Wi-Fi) simulation and test.
+
+### Control Systems
+- [Control System Toolbox](https://www.mathworks.com/products/control.html): PID tuning, state-space control, multi-loop control, and gain scheduling.
+- [Fuzzy Logic Toolbox](https://www.mathworks.com/products/fuzzy-logic.html): Design and simulate fuzzy logic systems.
+- [Model Predictive Control Toolbox](https://www.mathworks.com/products/model-predictive-control.html): Linear and nonlinear model predictive control (MPC).
+- [Motor Control Blockset](https://www.mathworks.com/products/motor-control.html): Design and implement motor control algorithms.
+- [Robust Control Toolbox](https://www.mathworks.com/products/robust.html): Design robust controllers for uncertain plants.
+- [SerDes Toolbox](https://www.mathworks.com/products/serdes.html): Design SerDes systems and generate IBIS-AMI models.
+- [Simulink Control Design](https://www.mathworks.com/products/simcontrol.html): Linearize models and design control systems.
+- [System Identification Toolbox](https://www.mathworks.com/products/sysid.html): Create dynamic system models from measured input-output data.
+
+### Automotive and Aerospace
+- [Aerospace Blockset](https://www.mathworks.com/products/aerospace-blockset.html): Model and simulate aerospace vehicles and spacecraft.
+- [Aerospace Toolbox](https://www.mathworks.com/products/aerospace-toolbox.html): Analyze aerospace vehicle motion, coordinate transforms, and orbital mechanics.
+- [Automated Driving Toolbox](https://www.mathworks.com/products/automated-driving.html): Design, simulate, and test ADAS and autonomous driving systems.
+- [AUTOSAR Blockset](https://www.mathworks.com/products/autosar-blockset.html): Develop AUTOSAR Classic and Adaptive software with code generation.
+- [C2000 Microcontroller Blockset](https://www.mathworks.com/products/c2000-microcontroller-blockset.html): Deploy to TI C2000 microcontrollers for motor control and power conversion.
+- [Model-Based Calibration Toolbox](https://www.mathworks.com/products/model-based-calibration.html): Calibrate complex powertrain systems.
+- [Powertrain Blockset](https://www.mathworks.com/products/powertrain.html): Model and simulate powertrain systems.
+- [UAV Toolbox](https://www.mathworks.com/products/uav.html): Design, simulate, and deploy UAV applications.
+- [Vehicle Dynamics Blockset](https://www.mathworks.com/products/vehicle-dynamics.html): Model and simulate vehicle dynamics.
+- [Vehicle Network Toolbox](https://www.mathworks.com/products/vehicle-network.html): Communicate via CAN, CAN FD, J1939, and XCP protocols.
+
+### Robotics and Autonomous Systems
+- [Lidar Toolbox](https://www.mathworks.com/products/lidar.html): Process and analyze point cloud data. Key areas: 3D SLAM, segmentation, object detection.
+- [Navigation Toolbox](https://www.mathworks.com/products/navigation.html): Motion planning, SLAM, sensor fusion, and inertial navigation.
+- [RoadRunner](https://www.mathworks.com/products/roadrunner.html): Design 3D scenes for automated driving simulation.
+- [RoadRunner Scenario](https://www.mathworks.com/products/roadrunner-scenario.html): Design driving scenarios for automated driving simulation.
+- [Robotics System Toolbox](https://www.mathworks.com/products/robotics.html): Design, simulate, and deploy manipulator and mobile robot applications.
+- [ROS Toolbox](https://www.mathworks.com/products/ros.html): Connect MATLAB and Simulink with ROS and ROS 2.
+- [Sensor Fusion and Tracking Toolbox](https://www.mathworks.com/products/sensor-fusion-and-tracking.html): Multi-object tracking and multi-sensor fusion.
+
+### Test and Measurement
+- [Data Acquisition Toolbox](https://www.mathworks.com/products/daq.html): Configure data acquisition hardware, read data into MATLAB and Simulink.
+- [Image Acquisition Toolbox](https://www.mathworks.com/products/image-acquisition.html): Acquire images and videos from cameras and frame grabbers.
+- [Instrument Control Toolbox](https://www.mathworks.com/products/instrument.html): Connect MATLAB to instruments such as oscilloscopes, signal analyzers, and power supplies.
+
+### Simulink Products
+- [DDS Blockset](https://www.mathworks.com/products/dds.html): Design and simulate DDS applications.
+- [Industrial Communication Toolbox](https://www.mathworks.com/products/industrial-communication.html): Access live and historical industrial plant data from MATLAB and Simulink.
+- [SimBiology](https://www.mathworks.com/products/simbiology.html): Model and simulate biological systems.
+- [SimEvents](https://www.mathworks.com/products/simevents.html): Model and simulate discrete-event systems.
+- [Simulink 3D Animation](https://www.mathworks.com/products/3d-animation.html): Visualize dynamic systems in 3D. Key areas: human-in-the-loop, synthetic data generation.
+- [Simulink Check](https://www.mathworks.com/products/simulink-check.html): Measure design quality and verify compliance with standards.
+- [Simulink Coverage](https://www.mathworks.com/products/simulink-coverage.html): Measure test coverage in models and generated code.
+- [Simulink Design Optimization](https://www.mathworks.com/products/sl-design-optimization.html): Parameter estimation, response optimization, and sensitivity analysis for Simulink models.
+- [Simulink Design Verifier](https://www.mathworks.com/products/simulink-design-verifier.html): Detect design errors using formal analysis and generate tests.
+- [Simulink Desktop Real-Time](https://www.mathworks.com/products/simulink-desktop-real-time.html): Run Simulink models in real time on desktop computer.
+- [Simulink Fault Analyzer](https://www.mathworks.com/products/simulink-fault-analyzer.html): Model faults, inject failures, and analyze effects.
+- [Simulink PLC Coder](https://www.mathworks.com/products/simulink-plc-coder.html): Generate IEC 61131 structured text and ladder diagrams from Simulink models.
+- [Simulink Real-Time](https://www.mathworks.com/products/simulink-real-time.html): Run Simulink models on real-time target hardware.
+- [Simulink Report Generator](https://www.mathworks.com/products/simulink-report-generator.html): Generate reports from Simulink models.
+- [Simulink Requirements](https://www.mathworks.com/products/simulink-requirements.html): Author, analyze, and manage requirements in Simulink.
+- [Simulink Test](https://www.mathworks.com/products/simulink-test.html): Develop, manage, and execute simulation-based tests with requirements traceability.
+- [SoC Blockset](https://www.mathworks.com/products/soc.html): Design and simulate systems on chip.
+- [System Composer](https://www.mathworks.com/products/system-composer.html): Design and simulate system and software architectures.
+
+### Code Generation and Verification
+- [DO Qualification Kit](https://www.mathworks.com/products/do-178.html): Qualify Simulink and Polyspace tools for DO-178, DO-278, and DO-254.
+- [Embedded Coder](https://www.mathworks.com/products/embedded-coder.html): Generate optimized code for embedded systems.
+- [GPU Coder](https://www.mathworks.com/products/gpu-coder.html): Generate CUDA code from MATLAB and Simulink for NVIDIA GPUs.
+- [HDL Coder](https://www.mathworks.com/products/hdl-coder.html): Generate HDL code for FPGA and ASIC designs.
+- [HDL Verifier](https://www.mathworks.com/products/hdl-verifier.html): Verify HDL designs using simulation and FPGA-in-the-loop.
+- [IEC Certification Kit](https://www.mathworks.com/products/iec-61508.html): Streamline certification for IEC 61508 and related safety standards.
+- [MATLAB Coder](https://www.mathworks.com/products/matlab-coder.html): Generate C and C++ code from MATLAB code.
+- [Polyspace Access](https://www.mathworks.com/products/polyspace-access.html): Review analysis results and monitor software quality metrics.
+- [Polyspace Bug Finder](https://www.mathworks.com/products/polyspace-bug-finder.html): Identify bugs and coding rule violations using static analysis.
+- [Polyspace Code Prover](https://www.mathworks.com/products/polyspace-code-prover.html): Prove absence of run-time errors in software.
+- [Polyspace Products for Ada](https://www.mathworks.com/products/polyspace-ada.html): Prove absence of run-time errors in Ada software.
+- [Polyspace Test](https://www.mathworks.com/products/polyspace-test.html): Generate test cases for structural code coverage.
+- [Requirements Toolbox](https://www.mathworks.com/products/requirements-toolbox.html): Author, link, and validate requirements with end-to-end traceability.
+- [Simulink Code Inspector](https://www.mathworks.com/products/simulink-code-inspector.html): Automate source code reviews for DO-178 and safety standards.
+- [Simulink Coder](https://www.mathworks.com/products/simulink-coder.html): Generate C and C++ code from Simulink models.
+
+### Math and Optimization
+- [Curve Fitting Toolbox](https://www.mathworks.com/products/curvefitting.html): Fit curves and surfaces using regression, interpolation, and smoothing.
+- [Global Optimization Toolbox](https://www.mathworks.com/products/global-optimization.html): Solve global optimization problems.
+- [Optimization Toolbox](https://www.mathworks.com/products/optimization.html): Solve linear, quadratic, and nonlinear optimization problems.
+- [Partial Differential Equation Toolbox](https://www.mathworks.com/products/pde.html): Solve partial differential equations.
+- [Symbolic Math Toolbox](https://www.mathworks.com/products/symbolic.html): Symbolic computation, equation derivation, and linearization.
+
+### Physical Modeling (Simscape)
+- [Simscape](https://www.mathworks.com/products/simscape.html): Model and simulate physical systems.
+- [Simscape Battery](https://www.mathworks.com/products/simscape-battery.html): Design and simulate battery systems and packs.
+- [Simscape Driveline](https://www.mathworks.com/products/simscape-driveline.html): Model and simulate driveline systems.
+- [Simscape Electrical](https://www.mathworks.com/products/simscape-electrical.html): Model and simulate electrical and electronic systems.
+- [Simscape Fluids](https://www.mathworks.com/products/simscape-fluids.html): Model and simulate fluid systems.
+- [Simscape Multibody](https://www.mathworks.com/products/simscape-multibody.html): Model and simulate multibody mechanical systems.
+- [Simscape Multibody Link](https://www.mathworks.com/products/simscape-multibody-link.html): Import CAD assemblies into Simscape Multibody models.
+
+### Financial Analysis
+- [Datafeed Toolbox](https://www.mathworks.com/products/datafeed.html): Access financial data from Bloomberg, FactSet, and other providers.
+- [Econometrics Toolbox](https://www.mathworks.com/products/econometrics.html): Time series econometrics: ARIMA, GARCH, VAR, cointegration, DSGE.
+- [Financial Instruments Toolbox](https://www.mathworks.com/products/financial-instruments.html): Price and analyze fixed-income securities and derivatives.
+- [Financial Toolbox](https://www.mathworks.com/products/finance.html): Portfolio optimization, backtesting, and Monte Carlo simulation.
+- [Risk Management Toolbox](https://www.mathworks.com/products/risk-management.html): Credit risk modeling, VaR, and expected shortfall analysis.
+
+### Cloud and IoT
+- [MATLAB Drive Connector](https://www.mathworks.com/products/matlab-drive.html): Synchronize MATLAB files with the cloud.
+- [ThingSpeak](https://www.mathworks.com/products/thingspeak.html): IoT analytics platform for collecting and analyzing data from connected devices.
+
+### Deployment
+- [MATLAB Compiler](https://www.mathworks.com/products/compiler.html): Build standalone applications from MATLAB programs.
+- [MATLAB Compiler SDK](https://www.mathworks.com/products/matlab-compiler-sdk.html): Build C/C++, .NET, Java, or Python libraries from MATLAB programs.
+- [MATLAB Production Server](https://www.mathworks.com/products/matlab-production-server.html): Host MATLAB analytics via web services with enterprise integration and MCP tools.
+- [Simulink Compiler](https://www.mathworks.com/products/simulink-compiler.html): Deploy Simulink simulations as standalone applications.
+
+## Application Examples
+
+### Signal Processing
+- Filter Design and Analysis: design filters to enhance signals and remove noise
+  - Noise reduction and audio enhancement: Design FIR/IIR filters to remove sensor noise and interference. Improve speech and music clarity in headsets, conferencing, and broadcast
+  - Anti-aliasing and decimation: Implement anti-aliasing front-ends and multirate filters to downsample high-rate signals without losing critical information
+  - Channel shaping and equalization: Create pulse-shaping, matched, and adaptive equalization filters to reduce interference in wireless systems
+- Spectral and Time-Frequency Analysis: analyze signals in frequency and time-frequency domains
+  - Rotating machinery condition monitoring: Use FFT and order analysis to detect faults from vibration and acoustic data
+  - Radar/sonar detection and classification: Apply spectrograms, STFT, and wavelet scalograms to separate targets from clutter and classify micro-motions
+  - Power quality monitoring: Detect harmonics, flicker, and transients via spectral analysis for grid compliance
+- Signal Measurements and Preprocessing: prepare and condition signals for analysis
+  - Detrending, windowing, and baseline correction: Remove trends, apply windows, and correct baselines for spectral analysis and feature extraction
+  - Resampling and synchronization: Align multi-channel/multi-rate streams and interpolate missing samples
+- Machine Learning and Deep Learning for Signals: apply ML/DL to signal data
+  - Acoustic/vibration anomaly detection: Train CNN/LSTM or autoencoder models on signal features to flag early-stage equipment faults
+  - RF modulation and spectrum sensing: Classify digital modulations from IQ data or time-frequency maps
+  - Biomedical event classification: Identify arrhythmias or sleep stages from ECG/EEG using signal features and ML/DL models
+
+### Aerospace Toolbox
+- Flight Dynamics and Aircraft Analysis: simulate aircraft, helicopter, quadcopter, and UAV systems
+  - Fixed-Wing Modeling: simulate nonlinear dynamics, static stability, and control of aircraft
+  - State-Space Conversion: convert aircraft models to LTI state-space for linear control and stability analysis
+  - Aerodynamic Analysis: compute aerodynamic coefficients using USAF Digital DATCOM and analyze lift, drag, and moments
+  - Flight Control Analysis: study longitudinal and lateral-directional flying qualities and design control systems
+  - Kinematic Simulations: test flight parameters and plot flight envelopes
+- Spacecraft and Satellite Mission Applications: track, visualize, and analyze satellite orbits and missions
+  - Mission Design: analyze spacecraft dynamics and control design for mission planning
+  - Orbital Mechanics: model satellite trajectories, ground tracks, and orbit planning
+  - Constellation Analysis: perform access analysis between ground stations and constellations; simulate radar detection and tracking
+  - Multi-Hop Path Selection: determine optimal paths through large satellite constellations
+  - Orbit Propagation: compare propagators including Two-Body Keplerian, SGP4, and SDP4
+- Utility and Transformations: coordinate transforms, attitude computation, and visualization
+  - Coordinate Transformations: convert between ECI, ECEF, and local navigation frames
+  - Attitude Computation: calculate orientation using quaternions, Euler angles, or rotation matrices
+  - Flight Instrument Visualization: use 3D animations and cockpit instruments to visualize navigation variables
+- Environmental and Mission Modeling: validated environment models for simulation
+  - Environment Models: incorporate gravity, atmosphere, wind, magnetic field, and planetary ephemerides
+  - Magnetic and Gravity Models: visualize Earth's magnetic field contours and implement gravity models with precessing reference frames
+  - Celestial Navigation: use planetary ephemerides for marine or aerospace navigation
+  - Landscape Creation: create test environments and landscapes for simulation
+- Propulsion and Performance Analysis: analyze jet and rocket engine performance
+  - Propulsion Modeling: analyze thrust, fuel consumption, and engine performance
+  - Gas Dynamics: calculate flow ratios and Prandtl-Meyer expansion waves for high-speed flight
+  - Heat Transfer: determine heat transfer and mass flow rate in ramjet combustion chambers
+
+### UAV Toolbox
+- Design and Simulation: design, simulate, and deploy UAV, drone, and advanced air mobility (AAM) applications
+  - Flight Controllers: design controllers for multirotor, fixed-wing, and VTOL aircraft
+  - Autonomy Algorithms: develop detect-and-avoid, rerouting, waypoint and orbit following
+  - Mission Planning: plan missions and analyze 3D flight paths, telemetry, and sensor data with Flight Log Analyzer
+- Scenario Generation and Testing: generate and simulate UAV scenarios for validation
+  - Hardware-in-the-Loop Testing: HIL testing of flight controllers and autonomy algorithms
+  - Sensor Simulation: simulate camera, lidar, IMU, and GPS in photorealistic 3D or 2.5D environments
+  - Application Testing: autonomous package delivery and other mission scenarios
+- Deployment and Integration: deploy UAV applications to hardware platforms
+  - Code Generation: C/C++ code generation for prototyping, HIL testing, and standalone deployment
+  - Autopilot Integration: Pixhawk with PX4 and ArduPilot support
+
+### Test and Measurement
+- Machine Learning and Predictive Maintenance: acquire data for ML models and predict equipment failures
+  - Training Data Acquisition: collect sensor data to train ML models for pattern recognition and classification
+  - ML Algorithm Validation: test ML algorithms with real-time data acquisition
+  - Predictive Maintenance: analyze sensor data to predict maintenance needs and prevent failures
+- Control Systems: implement closed-loop control with real-time sensor feedback
+  - Closed-Loop Control: acquire sensor data in real-time for feedback control systems
+  - Motor Control: generate PWM signals and acquire feedback for motor control applications
+  - Process Control: monitor and control industrial processes with analog and digital I/O
+  - Control Algorithm Testing: validate control algorithms with hardware-in-the-loop using real sensors and actuators
+- Test and Measurement Automation: automate testing and quality control processes
+  - Automated Test Equipment: create automated test systems for production and quality control
+  - Product Validation: test products against specifications using data acquisition hardware
+  - Environmental Testing: monitor environmental conditions during product testing
+- Signal Analysis: acquire and analyze signals from sensors and test equipment
+  - Signal Processing and FFT: acquire signals for filtering, spectral analysis, and feature extraction
+  - Noise Reduction: apply filters to remove noise from acquired data
+  - Waveform Characterization: analyze and characterize signal waveforms from sensors
+- Research and Development: collect experimental data and control laboratory instruments
+  - Laboratory Instrumentation: interface with sensors and instruments for data collection
+  - Prototype Testing: test prototypes with real-world sensor data and control signals
+  - Custom Measurement Systems: build measurement systems for research applications
+
+### Optimization Toolbox
+- Design Space Exploration: prototype unconventional solutions while balancing design constraints
+  - Automotive Design: explore suspension geometries to balance ride quality and steering response
+  - RF and Antenna Design: use surrogate optimization for antenna gain and bandwidth within volumetric constraints
+  - Optical System Design: iterate over lens coatings, orientations, and configurations to focus light to a sensor
+- Engineering Design Optimization: maximize performance of engineered systems
+  - Aircraft Component Design: minimize weight of structures while satisfying stress and safety constraints
+  - Battery Management: optimize fast-charging protocols for lithium-ion batteries to minimize risk and preserve health
+  - Automotive and Aerospace: tune motor calibration for fuel efficiency and performance
+- Process and Decision Optimization: make smarter decisions on resource utilization
+  - Mission Engineering: determine ideal resource deployment at lowest cost and risk
+  - Portfolio Optimization: apply Markowitz models to balance risk and return with transaction costs and cardinality constraints
+  - Techno-Economic Analysis: optimize energy balancing for cost savings and reliability in microgrids
+- Mathematical Calibration: fit models to data and minimize error
+  - Least-Squares Optimization: tune parameters for complex problems to match observed data
+  - Multi-Objective Optimization: trade off competing goals such as minimizing cost while maximizing performance
+
+### Simscape Battery
+- Equivalent Circuit Models (ECM): use circuit elements to mimic battery cell electro-thermal dynamics
+  - Battery Equivalent Circuit Block: model electro-thermal dynamics with resistors, capacitors, and voltage sources for BMS design and system-level simulation
+  - Fault Simulation: simulate shorted, open-circuit, and thermal runaway conditions
+  - Degradation Modeling: model cycling and calendar aging to predict battery lifetime and performance degradation
+  - Hysteresis Modeling: represent battery hysteresis behavior using one-state model
+- Battery Pack Modeling: create parameterized, simulation-ready battery pack models
+  - Pack Modeling Workflow: use MATLAB objects, functions, apps, and dynamic cell models to automate battery pack creation
+  - Pack Design: interactively create, modify, and visualize battery objects using Battery Builder app or MATLAB scripts
+- Electrochemical Cell Modeling: simulate physical and chemical processes inside batteries
+  - Single Particle Model: model charge/mass transfer, reaction kinetics, and thermodynamics considering ohmic and mass transport overpotentials, and current collector resistance
+- Parameter Estimation (Cell Characterization): fit battery models to experimental data
+  - ECM Parameter Estimation: estimate ECM parameters using optimization methods or tfest from System Identification Toolbox
+  - Lookup Table Fitting: use Model-Based Calibration Toolbox to fit lookup tables for ECM in minutes
+- Battery Management System: perform BMS functions with Simulink blocks
+  - State Estimation: estimate SOC, SOH, SOP, and SOE
+  - Battery Protection: implement protection algorithms and safety monitoring
+  - Cell Balancing: design passive and active cell balancing strategies
+  - Current Management: control charging and discharging to optimize performance
+- Thermal Management: simulate battery cooling systems and thermal behavior
+  - Cooling System Modeling: model and simulate cooling systems for thermal management
+- Deployment and HIL Simulation: deploy battery models for real-time testing
+  - Battery Cell Emulator: deploy models to target hardware for HIL testing
+  - Code Generation: all prebuilt BMS blocks support code generation for deployment
+
+### MATLAB
+- Data Analysis and Visualization: explore, analyze, and visualize data
+  - Data Exploration and Cleaning: import, preprocess, and clean datasets from various sources
+  - Statistical Analysis: perform regression, correlation, hypothesis testing, and descriptive statistics
+  - Visualization: generate 2D/3D plots, heatmaps, and interactive dashboards
+  - Time-Series Analysis: analyze trends, seasonal patterns, and anomalies over time
+- Machine Learning and AI: build predictive models and train neural networks
+  - Predictive Modeling: forecast trends such as energy consumption or equipment failures
+  - Classification and Clustering: identify patterns in medical, customer, or industrial data
+  - Deep Learning: train networks for image recognition, NLP, or anomaly detection
+  - Feature Engineering: prepare data for accurate and efficient ML models
+- Signal and Image Processing: analyze signals and process images
+  - Signal Analysis: detect patterns in EKG, vibration, audio, and sensor data
+  - Filtering and Denoising: remove noise from measurements to improve accuracy
+  - Image Processing: enhance, segment, and analyze images for defect detection, medical imaging, and satellite imagery
+  - Feature Extraction: identify key characteristics from signals or images for classification
+- Modeling, Simulation, and Control: develop models and design control systems
+  - Mathematical Modeling: build models for physical systems, financial models, or population dynamics
+  - Simulation: test system behavior under different scenarios before building prototypes
+  - Control System Design: analyze and design feedback loops for machines, robotics, or automated vehicles
+  - Dynamic System Analysis: study how systems evolve over time under varying conditions
+
+### Simulink
+- General Application Areas:
+  - Control Systems Design and Tuning: design, simulate, and tune feedback controllers (PID, state-space, nonlinear) before hardware is available
+  - Embedded Systems and Code Generation: design algorithms, simulate behavior, and auto-generate C/C++ code for microcontrollers and processors
+  - System-Level Modeling and Simulation: model complex system behavior over time to evaluate component interactions early in development
+  - Multi-Domain Modeling: simulate systems spanning electrical, mechanical, thermal, hydraulic, and control domains together for realistic behavior
+  - Testing, Verification, and Validation: verify with MIL, SIL, and HIL testing; link requirements to components and automate verification workflows
+  - Certification: design, verify, and generate software with traceability for safety standards including ISO 26262, DO-178C, IEC 61508, and IEC 62304
+  - Signal Processing Algorithm Development: design and evaluate filtering, modulation, estimation, and streaming data pipelines
+- Industry-Specific Applications:
+  - Automotive: design and validate powertrain, chassis, ADAS, and EV systems across the automotive V-model
+  - Aerospace and Defense: model flight dynamics, GNC systems, and validate safety- and mission-critical systems
+  - Robotics and Autonomous Systems: simulate closed-loop robotic behavior including sensors, plant dynamics, and decision logic
+  - Power Electronics and Energy: model converters, inverters, motors, batteries, and grids for efficiency and control analysis
+  - Wireless Communications: model signal generation, channel impairments, and receiver processing before hardware implementation
+
+## Solutions
+
+- [AI and Machine Learning](https://www.mathworks.com/solutions/artificial-intelligence.html): Building AI models and integrating them into systems
+- [Autonomous Systems](https://www.mathworks.com/solutions/autonomous-systems.html): Design and simulation of autonomous vehicles and robotics
+- [Model-Based Design](https://www.mathworks.com/solutions/model-based-design.html): Systematic approach from requirements to implementation
+- [Power Electronics and Motor Control](https://www.mathworks.com/solutions/power-electronics-control.html): Motor control and power conversion systems
+- [Solutions by Industry](https://www.mathworks.com/solutions.html): Industry-specific applications and workflows
+- [Wireless Communications](https://www.mathworks.com/solutions/wireless-communications.html): Design, simulate, and test wireless systems
+
+## Getting Started
+
+- [MATLAB Getting Started](https://www.mathworks.com/help/matlab/getting-started-with-matlab.html): Overview of MATLAB language, desktop environment, and basic operations
+- [Simulink Getting Started](https://www.mathworks.com/help/simulink/getting-started-with-simulink.html): Learn the basics of creating and simulating block diagram models
+
+## Documentation
+
+- [MATLAB Documentation](https://www.mathworks.com/help/matlab/index.html): Complete reference for MATLAB functions, syntax, and examples
+- [MathWorks Help Center](https://www.mathworks.com/help/): Main hub for product documentation and support resources
+- [Release Notes](https://www.mathworks.com/help/relnotes/llms.txt): What's new in recent releases across all products
+- [Simulink Documentation](https://www.mathworks.com/help/simulink/index.html): Reference for Simulink blocks, modeling techniques, and simulation
+
+## Key Concepts
+
+- [MATLAB Language Fundamentals](https://www.mathworks.com/help/matlab/language-fundamentals.html): Variables, matrices, operators, and control flow
+- [Simulink Model Basics](https://www.mathworks.com/help/simulink/gs/create-a-simple-model.html): Creating models, adding blocks, and running simulations
+
+## Learning
+
+- [MATLAB Academy](https://matlabacademy.mathworks.com/): Take courses, learning paths, and onramps to improve your skills
+
+## Community
+
+- [MATLAB Central](https://www.mathworks.com/matlabcentral/): Community hub for peer support, code sharing, contests, blogs, and AI-assisted MATLAB coding
+- [MATLAB Central Blogs](https://blogs.mathworks.com/llms.txt): MATLAB and Simulink blogs
+- [MATLAB Central Answers](https://www.mathworks.com/matlabcentral/answers/llms.txt): MATLAB and Simulink Answers

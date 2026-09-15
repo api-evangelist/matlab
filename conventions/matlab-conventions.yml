@@ -1,0 +1,177 @@
+specification: API Commons Conventions
+specificationVersion: '0.1'
+provider: MATLAB
+providerId: matlab
+generated: '2026-09-14'
+method: searched
+source: >-
+  https://www.mathworks.com/help/thingspeak/get-a-channel-feed.html,
+  https://www.mathworks.com/help/thingspeak/rest-api.html,
+  https://www.mathworks.com/help/thingspeak/error-codes.html,
+  https://www.mathworks.com/help/thingspeak/mqtt-basics.html,
+  https://www.mathworks.com/help/mps/restfuljson/restful-api.html
+note: >-
+  MATLAB's "APIs" are two different things and they do not share conventions. Most of the apis.yml
+  entries are in-process LANGUAGE BINDINGS (Engine API for Python/Java/C++/C/Fortran/.NET, MEX, Data API,
+  Compiler SDK) with no HTTP surface at all — pagination, idempotency and rate limits are `na` for those.
+  Only two surfaces are callable over HTTP: the ThingSpeak REST API (MathWorks-hosted, public) and the
+  MATLAB Production Server RESTful API (customer-hosted). This document covers those two.
+auth_style:
+  thingspeak: API key in the api_key query parameter or the THINGSPEAKAPIKEY header; three key roles (Read, Write, User).
+  matlab_production_server: No MathWorks-issued credential — the operator secures their own instance. Session Cookie required for async requests.
+  cross_reference: authentication/matlab-authentication.yml
+base_urls:
+  thingspeak: https://api.thingspeak.com
+  matlab_production_server: "http://{mps-host}:{port}"
+  note: >-
+    The MPS base is templated by design — MATLAB Production Server is software the customer installs
+    and runs, so no single host exists. The quick-start in the MCP framework uses localhost:9910.
+content_negotiation:
+  style: path extension, not Accept header
+  formats: [json, xml, csv]
+  pattern: "/channels/{channel_id}/feeds.{format}"
+  note: >-
+    ThingSpeak selects the representation from the URL extension (.json, .xml, .csv), a pre-REST
+    convention that an agent cannot discover from headers. JSONP is supported via a callback parameter.
+  matlab_production_server:
+    request_content_types:
+      - application/json
+      - application/x-google-protobuf
+    note: The protobuf encoding is documented as supported only by the Java and .NET client libraries.
+pagination:
+  style: time-window and count, not cursor or page
+  params:
+    - { name: results, description: "Number of entries to retrieve. Maximum 8,000." }
+    - { name: days, description: "Number of 24-hour periods before now. Default 1." }
+    - { name: minutes, description: "Number of 60-second periods before now. Default 1440." }
+    - { name: start, description: "Start date, YYYY-MM-DD%20HH:NN:SS." }
+    - { name: end, description: "End date, YYYY-MM-DD%20HH:NN:SS." }
+    - { name: timezone, description: "Time-zone identifier applied to results." }
+    - { name: offset, description: "Time-zone offset applied to results." }
+  response_fields: []
+  max_page_size: 8000
+  cursor: false
+  next_link: false
+  note: >-
+    There is no next-page link and no cursor. An agent walking more than 8,000 entries must page by
+    moving the start/end window itself, and there is no server-side signal that more data exists.
+  docs: https://www.mathworks.com/help/thingspeak/get-a-channel-feed.html
+filtering_and_aggregation:
+  params:
+    - { name: min, description: "Minimum value filter." }
+    - { name: max, description: "Maximum value filter." }
+    - { name: round, description: "Round to N decimal places." }
+    - { name: timescale, description: "Resample interval in minutes: 10, 15, 20, 30, 60, 240, 720, 1440 or daily." }
+    - { name: sum, description: "Sum over the interval; same accepted values as timescale." }
+    - { name: average, description: "Average over the interval; NaN values are interpreted as 0." }
+    - { name: median, description: "Median over the interval; same accepted values as timescale." }
+  note: Server-side aggregation is unusually rich for a REST API of this size and removes a whole class of client work.
+field_expansion:
+  params:
+    - { name: status, description: "Include channel status updates." }
+    - { name: metadata, description: "Include channel metadata." }
+    - { name: location, description: "Include latitude, longitude and elevation." }
+  style: boolean opt-in flags, not a sparse-fieldset or expand grammar
+metadata: >-
+  ThingSpeak channels carry free-form metadata returned only when metadata=true is requested.
+request_id_tracing:
+  supported: false
+  note: No request-id or correlation header is documented on either surface.
+versioning:
+  api_versioning: none
+  note: >-
+    Neither HTTP surface is versioned — no /v1 path segment, no version header, no version query
+    parameter. The ThingSpeak REST API has no declared version at all. MATLAB Production Server
+    versions with the MATLAB release (R2026a), and the client libraries are downloaded per release.
+  cross_reference: lifecycle/matlab-lifecycle.yml
+error_envelope:
+  thingspeak:
+    media_types: [application/json, application/xml]
+    fields: [code, message, details]
+    rfc9457: false
+  matlab_production_server:
+    media_types: [application/json]
+    shape: '{"error": {"message": "..."}}'
+    rfc9457: false
+  cross_reference: errors/matlab-problem-types.yml
+rate_limit_signaling:
+  headers_returned: none documented
+  exhaustion_status:
+    rate: 429 (error_too_many_requests)
+    quota: 402 (error_payment_required)
+  note: >-
+    MathWorks documents no X-RateLimit-* or RateLimit-* response headers and no Retry-After, so a
+    client learns it is throttled only by getting a 429 back. The 402-for-quota / 429-for-rate split
+    is unusual and worth knowing: they are different failures with different remedies.
+  cross_reference: rate-limits/matlab-rate-limits.yml
+idempotency:
+  coverage: none
+  mechanism: null
+  header: null
+  scope: []
+  note: >-
+    No idempotency key, no replay protection, no conditional-write header is documented on either HTTP
+    surface. A repeated ThingSpeak /update is a second channel entry and a second billed message —
+    the only thing that suppresses a duplicate is the update-interval limit, which rejects rather than
+    deduplicates. MATLAB Production Server function execution carries no idempotency contract either;
+    its asynchronous mode gives a request id AFTER the request is accepted, which lets a client poll
+    but not retry safely.
+dry_run_mode:
+  supported: partial
+  note: >-
+    No dry-run on the HTTP surfaces. The MCP layer has the closest equivalent: check_matlab_code runs
+    static analysis and is explicitly documented as "a non-destructive, read-only operation ... without
+    executing the script", so an agent can rehearse a script before run_matlab_file executes it.
+  docs: https://github.com/matlab/matlab-mcp-server#tools
+reversibility:
+  grade: documented
+  note: >-
+    ThingSpeak publishes reversal operations but states no window for them. DELETE on a channel and
+    DELETE on a channel's feed are documented, and channel deletion is described as permanent, but the
+    docs do not state any period during which a delete can be undone — so this is graded `documented`
+    (a reversal path exists) rather than `verified` (a path AND a stated window). No window is asserted
+    here because none is published; inventing one would be the single most expensive error in this file.
+  surfaces:
+    - write_surface: Write channel entry (GET/POST https://api.thingspeak.com/update)
+      reversal: "Clear Channel — DELETE https://api.thingspeak.com/channels/{channelID}/feeds.json with the User API Key; responds 200 with an empty JSON object."
+      operation_id: null
+      window: null
+      window_stated: false
+      docs: https://www.mathworks.com/help/thingspeak/clearchannel.html
+      note: >-
+        All-or-nothing: Clear Channel removes every entry in the feed, not one write. There is no
+        per-entry delete. It also does not refund the messages already counted against the licence
+        quota — the data is reversible, the billing is not.
+    - write_surface: Create channel (POST https://api.thingspeak.com/channels)
+      reversal: "Delete Channel — DELETE https://api.thingspeak.com/channels/{channelID}.json with the User API Key; responds with the channel settings as they were before deletion."
+      operation_id: null
+      window: null
+      window_stated: false
+      docs: https://www.mathworks.com/help/thingspeak/deletechannel.html
+      note: >-
+        The docs describe the mechanics only. They state no recovery window, no backup period and no
+        undo, so nothing is asserted here about whether the delete can be walked back.
+    - write_surface: "Write channel image (POST https://api.thingspeak.com/channels/{channelID}/photos)"
+      reversal: "Delete channel image (DELETE on the same path)"
+      operation_id: null
+      window: null
+      window_stated: false
+      docs: https://www.mathworks.com/help/thingspeak/rest-api.html
+      note: An image write costs 100 messages against the quota.
+    - write_surface: MATLAB Production Server asynchronous request (POST /{archive}/{function}?mode=async)
+      reversal: DELETE the request resource
+      operation_id: null
+      window: "while the request is in state QUEUED or IN_PROGRESS"
+      window_stated: true
+      docs: https://www.mathworks.com/help/mps/restfuljson/restful-api.html
+      note: >-
+        This is the one reversal on the whole surface with a stated boundary, and it is a state
+        condition rather than a duration — once the request reaches READY it has already run, and the
+        side effects of the MATLAB function it executed are outside the API's control.
+    - write_surface: MATLAB MCP Server evaluate_matlab_code / run_matlab_file
+      reversal: none
+      window: null
+      window_stated: false
+      note: >-
+        There is no undo. These tools execute arbitrary MATLAB on the operator's machine; MathWorks'
+        own guidance is to keep a human in the loop and review each call before it runs.

@@ -1,0 +1,77 @@
+specification: API Commons Lifecycle
+specificationVersion: '0.1'
+provider: MATLAB
+providerId: matlab
+generated: '2026-09-14'
+method: searched
+source: >-
+  https://www.mathworks.com/help/matlab/release-notes.html,
+  https://www.mathworks.com/help/relnotes/llms.txt,
+  https://status.mathworks.com/,
+  https://github.com/matlab/matlab-mcp-server/releases
+versioning:
+  scheme: release-designation
+  pattern: "R<year><a|b>"
+  cadence: semi-annual (a = spring, b = fall)
+  current: R2026a
+  note: >-
+    The product versions; the HTTP APIs do not. Neither the ThingSpeak REST API nor the MATLAB
+    Production Server RESTful API carries a version path segment, header or parameter — see
+    conventions/matlab-conventions.yml. What a caller pins is the MATLAB release the server or client
+    library came from, and for the customer-hosted MPS surface that is a decision the customer makes.
+  api_versioning: none
+  breaking_change_channel: Release Notes "Functionality being removed or changed" / "Incompatibilities"
+deprecation:
+  policy_published: true
+  policy_url: https://www.mathworks.com/help/matlab/release-notes.html
+  mechanism: >-
+    Every release publishes a "Functionality being removed or changed" section and the release-notes
+    browser exposes an "Incompatibilities" filter alongside "Highlights", so an operator can list the
+    breaking changes for a given release across all products.
+  headers:
+    sunset: false
+    deprecation: false
+    rfc8594: false
+    note: >-
+      No RFC 8594 Sunset or Deprecation response header is documented on either HTTP surface. The
+      deprecation signal is editorial (release notes), not runtime — an agent calling the API learns
+      nothing about pending removal from the response.
+  runtime_signal: >-
+    The MCP server's check_matlab_code tool is the one place deprecation surfaces programmatically:
+    its documented output includes warnings about "deprecated functions".
+  deprecated_operations: []
+  deprecated_operations_note: No OpenAPI exists to derive deprecated operations from.
+status_page:
+  url: https://status.mathworks.com/
+  scope: MathWorks cloud services
+  machine_readable: unknown
+  note: Already wired in apis.yml common[] as type StatusPage; retained here as the lifecycle signal.
+support:
+  contact: https://www.mathworks.com/support/contact_us.html
+  maintenance: >-
+    Annual MATLAB licences include MathWorks Software Maintenance Service, which is how a customer stays
+    on a supported release. See plans/matlab-plans-pricing.yml.
+  sla_published: false
+  sla_note: No public uptime SLA is published for ThingSpeak or any MathWorks cloud service.
+component_lifecycles:
+  - component: MATLAB Production Server client libraries
+    scheme: per-MATLAB-release ZIP archives
+    range_available: R2016a .. R2026a
+    source: https://www.mathworks.com/products/matlab-production-server/client-libraries.html
+    note: Ten years of releases are still downloadable, so an old integration is not stranded.
+  - component: MATLAB MCP Server
+    scheme: semver, pre-1.0
+    current: v0.13.0
+    released: '2026-09-03'
+    cadence: >-
+      13 minor releases between v0.9.2 (2026-05-21) and v0.13.0 (2026-09-03) — roughly every two to
+      three weeks. Fast-moving and explicitly pre-1.0, so the tool surface is not yet stable.
+    source: https://github.com/matlab/matlab-mcp-server/releases
+  - component: MATLAB Engine API for Python (matlabengine on PyPI)
+    scheme: release-tracking (26.1.x pairs with R2026a)
+    current: 26.1.12
+    released: '2026-05-08'
+    source: https://pypi.org/project/matlabengine/
+  - component: MCP Framework for MATLAB Production Server
+    requires: MATLAB R2025b+, MATLAB Compiler SDK, MATLAB Production Server R2022a+
+    source: https://github.com/matlab/mcp-framework-matlab-production-server

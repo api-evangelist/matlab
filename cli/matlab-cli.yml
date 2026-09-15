@@ -1,0 +1,91 @@
+specification: API Commons CLI
+specificationVersion: '0.1'
+provider: MATLAB
+providerId: matlab
+generated: '2026-09-14'
+method: searched
+source: >-
+  https://www.mathworks.com/help/matlab/ref/matlablinux.html,
+  https://www.mathworks.com/help/mps/server/mpsnew.html,
+  https://www.mathworks.com/help/mps/server/mpsstart.html,
+  https://www.mathworks.com/help/mps/server/mpsstatus.html,
+  https://www.mathworks.com/help/mps/server/mpsrestart.html,
+  https://www.mathworks.com/help/mps/server/mpssetup.html,
+  https://www.mathworks.com/help/mps/server/mpscheck.html,
+  https://www.mathworks.com/help/mps/server/mpsservice.html,
+  https://www.mathworks.com/help/mps/qs/start-a-matlab-production-server-instance.html,
+  https://github.com/matlab/matlab-mcp-server
+note: >-
+  MathWorks ships no single unified `mathworks` CLI. There are three separate first-party command-line
+  surfaces: the MATLAB launcher itself, the MATLAB Production Server admin commands, and the MCP server
+  binary. All three are relevant to an agent, because -batch and mps-* are how MATLAB gets driven from CI.
+clis:
+  - name: matlab
+    description: The MATLAB launcher. Non-interactive execution with -batch is the CI and automation entry point.
+    install:
+      - Installed with MATLAB; add <matlabroot>/bin to PATH.
+    docs: https://www.mathworks.com/help/matlab/ref/matlablinux.html
+    flags:
+      - { flag: "-batch <statement>", description: "Execute code non-interactively and exit. The automation flag." }
+      - { flag: "-r <statement>", description: "Execute code in interactive mode." }
+      - { flag: "-nodesktop", description: "Run without opening the desktop interface." }
+      - { flag: "-nodisplay", description: "Suppress desktop tools and graphics output." }
+      - { flag: "-nojvm", description: "Start without loading the Java Virtual Machine." }
+      - { flag: "-noFigureWindows", description: "Disable figure window display." }
+      - { flag: "-display <xDisp>", description: "Send X commands to the specified display server." }
+      - { flag: "-sd <folder>", description: "Set the initial working folder." }
+      - { flag: "-useStartupFolderPref", description: "Use the folder from General Settings preferences." }
+      - { flag: "-logfile <filename>", description: "Copy Command Window output to a file." }
+      - { flag: "-singleCompThread", description: "Limit MATLAB to a single computational thread." }
+      - { flag: "-nouserjavapath", description: "Disable custom Java class path files." }
+      - { flag: "-c <license>", description: "Specify a license file or port@host entry." }
+      - { flag: "-n", description: "Display final environment variables without starting MATLAB." }
+      - { flag: "-e", description: "Display all environment variables to standard output." }
+      - { flag: "-Ddebugger <debugopts>", description: "Start in debug mode under the named debugger." }
+      - { flag: "-jdb <portnumber>", description: "Enable the Java debugger on a port." }
+      - { flag: "-h | -help", description: "Display startup options without launching MATLAB." }
+  - name: MATLAB Production Server admin commands
+    description: Create, start, stop, inspect and service-register MATLAB Production Server instances.
+    install:
+      - Installed with MATLAB Production Server; add <mpsroot>/script to PATH.
+    docs: https://www.mathworks.com/help/mps/qs/start-a-matlab-production-server-instance.html
+    commands:
+      - { command: mps-setup, description: "Set up the server environment (point the instance at MATLAB Runtime installations).", docs: "https://www.mathworks.com/help/mps/server/mpssetup.html" }
+      - { command: mps-new, description: "Create a server instance — makes the folder and default hierarchy. Flags include -v, --service, --service-name, --service-description, --service-user, --service-password, --noprompt.", docs: "https://www.mathworks.com/help/mps/server/mpsnew.html" }
+      - { command: mps-start, description: "Start a server instance from the system prompt.", docs: "https://www.mathworks.com/help/mps/server/mpsstart.html" }
+      - { command: mps-stop, description: "Stop a running server instance.", docs: "https://www.mathworks.com/help/mps/server/starting-and-stopping.html" }
+      - { command: mps-restart, description: "Stop and start a server instance.", docs: "https://www.mathworks.com/help/mps/server/mpsrestart.html" }
+      - { command: mps-status, description: "Display instance status (STARTED/STOPPED) and full path. Supports --statistics/-s [sample_interval] and --json/-j.", docs: "https://www.mathworks.com/help/mps/server/mpsstatus.html", machine_readable: true }
+      - { command: mps-check, description: "Test and diagnose a server instance for problems.", docs: "https://www.mathworks.com/help/mps/server/mpscheck.html" }
+      - { command: mps-service, description: "Create or modify a Windows service for a server instance.", docs: "https://www.mathworks.com/help/mps/server/mpsservice.html" }
+    note: >-
+      mps-status --json is the one command in this surface that emits machine-readable output, which
+      makes it the natural health probe for an agent or a CI job supervising an MPS instance.
+  - name: matlab-mcp-server
+    description: The official MATLAB MCP Server binary, run over stdio by an MCP client.
+    install:
+      - "Download the release binary for your platform: https://github.com/matlab/matlab-mcp-server/releases/latest"
+      - "go install github.com/matlab/matlab-mcp-server/cmd/matlab-mcp-server@latest"
+      - "Claude Desktop: install the matlab-mcp-server.mcpb bundle"
+    docs: https://github.com/matlab/matlab-mcp-server
+    flags:
+      - { flag: "--help", description: "Display help for all arguments." }
+      - { flag: "--version", description: "Display the server version." }
+      - { flag: "--matlab-root=<path>", description: "Which MATLAB to start (omit /bin)." }
+      - { flag: "--initialize-matlab-on-startup=true", description: "Start MATLAB when the server starts rather than on first tool call." }
+      - { flag: "--initial-working-folder=<path>", description: "Folder where MATLAB starts." }
+      - { flag: "--matlab-display-mode=desktop|nodesktop", description: "Show or hide the MATLAB desktop." }
+      - { flag: "--matlab-session-mode=new|auto|existing", description: "Start a new MATLAB or attach to a shared session (MATLAB R2023a+)." }
+      - { flag: "--setup-matlab", description: "Install the MATLAB MCP Server Toolbox add-on, required once before using existing-session mode." }
+      - { flag: "--extension-file=<path>", description: "JSON file defining custom MCP tools. Repeatable." }
+      - { flag: "--log-folder=<path>", description: "Where the server writes log files." }
+      - { flag: "--log-level=debug|info|warn|error", description: "Log verbosity. Default info." }
+      - { flag: "--disable-telemetry=true", description: "Opt out of anonymized data collection." }
+    env_prefix: MW_MCP_SERVER_
+    env_note: "Every flag has an environment-variable form: uppercase the flag, replace - with _, prefix MW_MCP_SERVER_. CLI flags win over environment variables."
+  - name: matlab-proxy-app
+    description: Serves a MATLAB desktop over HTTP in a browser tab; the transport under the Jupyter and container integrations.
+    install:
+      - pip install matlab-proxy
+    docs: https://github.com/mathworks/matlab-proxy
+    package: matlab-proxy

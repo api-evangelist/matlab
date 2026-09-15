@@ -1,0 +1,91 @@
+specification: API Commons Event Surface
+specificationVersion: '0.1'
+provider: MATLAB
+providerId: matlab
+generated: '2026-09-14'
+method: searched
+source: >-
+  https://www.mathworks.com/help/thingspeak/mqtt-basics.html,
+  https://www.mathworks.com/help/thingspeak/mqtt-api.html,
+  https://www.mathworks.com/help/thingspeak/react-app.html,
+  https://www.mathworks.com/help/thingspeak/rest-api.html
+asyncapi_published: false
+asyncapi_note: >-
+  MathWorks publishes NO AsyncAPI document for ThingSpeak or any other surface. Probed
+  api.thingspeak.com and thingspeak.mathworks.com for /asyncapi.json and /asyncapi.yaml on 2026-09-14;
+  both hosts 404 on every path outside their application routes. No AsyncAPI has been authored here —
+  an event surface exists and is documented in prose, and that is what this file records.
+webhooks_published: true
+surfaces:
+  - name: ThingSpeak MQTT API
+    kind: pub/sub broker
+    protocol: MQTT
+    broker: mqtt3.thingspeak.com
+    ports:
+      - { port: 1883, transport: TCP, tls: false }
+      - { port: 8883, transport: TCP, tls: true }
+      - { port: 80, transport: WebSocket, tls: false, path: /mqtt }
+      - { port: 443, transport: WebSocket, tls: true, path: /mqtt }
+    qos: 0
+    qos_note: >-
+      QoS 0 only. No delivery acknowledgement — a subscriber that misses a message has no protocol-level
+      way to learn it missed one, and must reconcile against the REST feed.
+    idle_timeout_minutes: 60
+    auth:
+      model: MQTT device credentials (client ID, username, password) provisioned in the web interface
+      cross_reference: authentication/matlab-authentication.yml
+    channels:
+      - { topic: "channels/<channelID>/publish", direction: publish, description: "Update one or more channel fields in a single message." }
+      - { topic: "channels/<channelID>/subscribe", direction: subscribe, description: "Receive channel feed updates." }
+      - { topic: "channels/<channelID>/subscribe/fields/field<N>", direction: subscribe, description: "Receive updates for a single field." }
+    docs: https://www.mathworks.com/help/thingspeak/mqtt-api.html
+    note: >-
+      Topics carry the channel ID in the path, so a subscription is per-channel and an MQTT device may
+      be authorized for at most 10 channels. See rate-limits/matlab-rate-limits.yml.
+  - name: ThingSpeak React
+    kind: condition-triggered action
+    description: >-
+      Evaluates a condition against incoming channel data and fires an action. Condition types are
+      String (contains / starts with / ends with / is equal to / is not equal to), Status, Numeric,
+      Geo Location (within / farther than a distance) and No Data Check (channel stopped updating).
+    evaluation_frequency:
+      - on data insertion
+      - every 10 minutes
+      - every 30 minutes
+      - every 60 minutes
+    actions:
+      - ThingHTTP request
+      - MATLAB Analysis code
+    docs: https://www.mathworks.com/help/thingspeak/react-app.html
+  - name: ThingSpeak ThingHTTP
+    kind: outbound HTTP (the closest thing to a webhook here)
+    description: >-
+      Issues an HTTP request to a third-party URL. Combined with React this is the provider's webhook
+      equivalent — ThingSpeak calls out when a channel condition is met. It is a user-configured
+      request rather than a catalogued event type, so there is no event schema to enumerate.
+    docs: https://www.mathworks.com/help/thingspeak/rest-api.html
+  - name: ThingSpeak TalkBack
+    kind: command queue
+    path: "https://api.thingspeak.com/channels/<channelID>/commands"
+    description: Queues commands for a device to poll and execute; a pull-based command channel rather than a push.
+    docs: https://www.mathworks.com/help/thingspeak/rest-api.html
+  - name: ThingSpeak Alerts
+    kind: notification
+    path: "https://api.thingspeak.com/alerts"
+    description: Sends email alerts. Listed under the REST API reference; counted as a message against the licence allowance when triggered by React or TimeControl.
+    docs: https://www.mathworks.com/help/thingspeak/rest-api.html
+event_catalog_note: >-
+  There is no catalogued set of named event types with schemas. What ThingSpeak publishes is a
+  transport (MQTT topics keyed on channel and field) plus a rules engine (React) whose payload shape
+  is whatever the user configures in ThingHTTP. An agent can subscribe reliably; it cannot discover
+  the event vocabulary, because there isn't one.
+no_event_surface:
+  - api: MATLAB Production Server RESTful API
+    note: >-
+      Asynchronous execution is poll-based — POST with mode=async returns a request resource the client
+      polls via GET {request.up}?since={seq}. There is no callback, no webhook and no push. An agent
+      must hold the poll loop itself.
+  - api: MATLAB MCP Server
+    note: >-
+      MCP notifications only; no provider-hosted event stream. The MPS MCP framework additionally
+      exposes an SSE route (/{archive}/sse) but that is customer-hosted transport, not a MathWorks event feed.

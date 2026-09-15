@@ -1,0 +1,170 @@
+specification: API Commons Conformance
+specificationVersion: '0.1'
+provider: MATLAB
+providerId: matlab
+generated: '2026-09-14'
+method: derived
+source: >-
+  Derived from artifacts already in this repository — well-known/matlab-security.txt,
+  llms/matlab-llms.txt, mcp/matlab-mcp.yml, skills/_index.yml, errors/matlab-problem-types.yml,
+  authentication/matlab-authentication.yml, conventions/matlab-conventions.yml and
+  security/matlab-trust-center.yml — each of which cites the provider page or file it was read from.
+conformance:
+  - id: mcp
+    name: Model Context Protocol
+    conforms: true
+    evidence: >-
+      github.com/matlab/matlab-mcp-server is an official MathWorks MCP server implementing both Tools
+      (5) and Resources (2). Its .registry/server.template.json declares
+      $schema https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json and
+      transport.type "stdio".
+    artifact: mcp/matlab-mcp.yml
+  - id: agent-skills
+    name: Anthropic Agent Skills (SKILL.md)
+    conforms: true
+    evidence: >-
+      212 first-party SKILL.md files across matlab/matlab-agentic-toolkit (152),
+      matlab/simulink-agentic-toolkit (31) and matlab/agent-skills-playground (29), each with
+      conforming YAML frontmatter (name, description, license, metadata.author, metadata.version).
+    artifact: skills/_index.yml
+  - id: claude-code-plugin-marketplace
+    name: Claude Code plugin marketplace schema
+    conforms: true
+    evidence: >-
+      matlab-agentic-toolkit/.claude-plugin/marketplace.json declares
+      $schema https://anthropic.com/claude-code/marketplace.schema.json with one plugin per skill group.
+    artifact: skills/_index.yml
+  - id: llmstxt
+    name: llms.txt
+    conforms: true
+    evidence: >-
+      https://www.mathworks.com/llms.txt returns HTTP 200, 382 lines, in llms.txt form (H1, blockquote
+      summary, sectioned link lists). MathWorks federates it: /help/relnotes/llms.txt (200) and
+      /matlabcentral/answers/llms.txt (200) are separate documents linked from the root file.
+    artifact: llms/matlab-llms.txt
+  - id: rfc9116
+    name: RFC 9116 security.txt
+    conforms: true
+    evidence: >-
+      https://www.mathworks.com/.well-known/security.txt returns HTTP 200 with Contact, Expires,
+      Encryption, Preferred-Languages, Canonical and Policy fields — every required field present and
+      Expires in the future (2026-12-31).
+    artifact: well-known/matlab-security.txt
+  - id: mqtt
+    name: MQTT
+    conforms: true
+    evidence: >-
+      ThingSpeak operates an MQTT broker at mqtt3.thingspeak.com on 1883/8883 (TCP) and 80/443
+      (WebSocket, path /mqtt), with QoS 0 and channel-keyed topics.
+    artifact: asyncapi/matlab-thingspeak-events.yml
+  - id: jsonrpc2
+    name: JSON-RPC 2.0
+    conforms: true
+    evidence: >-
+      Carried transitively by MCP, and declared explicitly in the MPS MCP framework's own
+      +prodserver/+mcp/+jsonrpc/ schema files (LogicalSchema.json, WireEncodingSchema.json).
+    artifact: mcp/matlab-mcp.yml
+  - id: openapi
+    name: OpenAPI
+    conforms: false
+    evidence: >-
+      No OpenAPI or Swagger document is published for any MathWorks API. Probed /openapi.json,
+      /openapi.yaml, /swagger.json, /api-docs, /v1/openapi.json and /redoc on www.mathworks.com
+      (403 on every path, the same answer the host gives for paths it does not serve) and on
+      api.thingspeak.com and thingspeak.mathworks.com (404 on every path) on 2026-09-14.
+      github.com/mathworks-ref-arch/openapi-productionserver is a MATLAB toolbox that GENERATES an
+      OpenAPI for a customer's deployed MPS functions — it is not a contract for a MathWorks API.
+  - id: asyncapi
+    name: AsyncAPI
+    conforms: false
+    evidence: /asyncapi.json and /asyncapi.yaml return 404 on api.thingspeak.com and thingspeak.mathworks.com (2026-09-14). The MQTT surface is documented in prose only.
+  - id: graphql
+    name: GraphQL
+    conforms: false
+    evidence: /graphql returns 404 on api.thingspeak.com and 403 (the not-served answer) on www.mathworks.com.
+  - id: grpc
+    name: gRPC / Protocol Buffers
+    conforms: partial
+    evidence: >-
+      No .proto is published. MATLAB Production Server does accept
+      Content-Type application/x-google-protobuf, but only from the Java and .NET client libraries and
+      with no published schema, so a third party cannot generate a client from it.
+  - id: soap-wsdl
+    name: WSDL / SOAP
+    conforms: false
+    evidence: >-
+      api.thingspeak.com/?wsdl and /?singleWsdl return HTTP 200 with a ZERO-BYTE body — the app ignores
+      the query string. That is not a contract. No WSDL exists in the mathworks or mathworks-ref-arch
+      GitHub organizations.
+  - id: oauth2
+    name: OAuth 2.0
+    conforms: false
+    evidence: /.well-known/oauth-authorization-server is not served on any MathWorks host. Authentication is API keys and MQTT device credentials only.
+    artifact: authentication/matlab-authentication.yml
+  - id: oidc
+    name: OpenID Connect
+    conforms: false
+    evidence: /.well-known/openid-configuration is not served on any MathWorks host.
+  - id: rfc9457
+    name: RFC 9457 Problem Details
+    conforms: false
+    evidence: >-
+      ThingSpeak returns a vendor error object with code/message/details in application/json or
+      application/xml; MATLAB Production Server returns {"error":{"message":...}}. Neither uses
+      application/problem+json.
+    artifact: errors/matlab-problem-types.yml
+  - id: idempotency
+    name: Idempotency keys
+    conforms: false
+    evidence: No Idempotency-Key header or equivalent replay protection is documented on either HTTP surface.
+    artifact: conventions/matlab-conventions.yml
+  - id: pagination
+    name: Cursor pagination
+    conforms: false
+    evidence: >-
+      ThingSpeak pages by time window and a results count capped at 8,000, with no cursor, no next link
+      and no total. MATLAB Production Server has no collection endpoint to page.
+    artifact: conventions/matlab-conventions.yml
+  - id: rfc8594
+    name: RFC 8594 Sunset header
+    conforms: false
+    evidence: Deprecation is published editorially in release notes ("Functionality being removed or changed"); no Sunset or Deprecation response header is documented.
+    artifact: lifecycle/matlab-lifecycle.yml
+  - id: a2a
+    name: A2A Agent Card
+    conforms: false
+    evidence: /.well-known/agent-card.json and /.well-known/agent.json are not served on www.mathworks.com, mathworks.com, api.thingspeak.com or thingspeak.mathworks.com (2026-09-14).
+    artifact: well-known/matlab-well-known.yml
+  - id: soc2
+    name: SOC 2 Type II
+    conforms: true
+    evidence: >-
+      Stated as completed on the MathWorks Trust Center; a dated SOC 3 report (the publicly
+      distributable form of the same examination) is published as a PDF, and the full SOC 2 is
+      released on request.
+    artifact: security/matlab-trust-center.yml
+  - id: gdpr
+    name: GDPR
+    conforms: true
+    evidence: DPA, GDPR subprocessor list, EU Standard Contractual Clauses and the UK International Data Transfer Addendum are all published or available on request via the Trust Center.
+    artifact: security/matlab-trust-center.yml
+  - id: iso27001
+    name: ISO/IEC 27001
+    conforms: false
+    evidence: MathWorks says its programme is BASED ON frameworks including ISO 27001 but claims no certification; no certificate is published.
+    artifact: security/matlab-trust-center.yml
+domain_standards: []
+domain_standards_note: >-
+  REWARD-ONLY, and honestly empty. The domain-standard check reads a CONTRACT declaring a standard for
+  its own market — a SCIM URN, an OData $metadata surface, an HL7v2 message type. MathWorks publishes
+  no machine-readable contract at all, so there is no spec location that could carry such a
+  declaration. MathWorks does implement a great many engineering interop standards INSIDE the products
+  (ONNX, FMI, AUTOSAR, DDS, OPC UA, ROS, MAVLink, A2L, Apache Arrow/Parquet/Avro — several of them
+  visible in the skills catalogue and the mathworks-ref-arch repositories), but those are product
+  capabilities reached through the language bindings, not declarations made by an API contract.
+  Recording them here would credit a conformance the interface does not assert.
+counts:
+  total: 21
+  conforms_true: 9
+  conforms_false: 11
+  conforms_partial: 1

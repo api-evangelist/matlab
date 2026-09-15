@@ -1,0 +1,96 @@
+specification: API Commons Authentication
+specificationVersion: '0.1'
+provider: MATLAB
+providerId: matlab
+generated: '2026-09-14'
+method: searched
+source: >-
+  https://www.mathworks.com/help/thingspeak/rest-api.html,
+  https://www.mathworks.com/help/thingspeak/get-a-channel-feed.html,
+  https://www.mathworks.com/help/thingspeak/mqtt-basics.html,
+  https://www.mathworks.com/help/mps/restfuljson/restful-api.html,
+  https://github.com/matlab/matlab-mcp-server
+note: >-
+  Not derived from an OpenAPI: MathWorks publishes no OpenAPI/Swagger document for any of these
+  surfaces (see x-coverage in apis.yml). Every scheme below was read from the provider's own docs.
+  There is no OAuth 2.0 or OpenID Connect anywhere on the public API surface — /.well-known/openid-configuration
+  and /.well-known/oauth-authorization-server are not served on any MathWorks host (see well-known/matlab-well-known.yml),
+  so scopes/ is deliberately absent rather than empty.
+oauth2: false
+openid_connect: false
+schemes:
+  - id: thingspeak_read_api_key
+    api: ThingSpeak REST API
+    type: apiKey
+    in: query
+    name: api_key
+    also_accepted_in: header (THINGSPEAKAPIKEY)
+    scope_of_use: Reading data from a private channel.
+    required: false
+    note: Public channels can be read with no key at all — https://api.thingspeak.com/channels/9/feeds.json returned 200 with data anonymously on 2026-09-14.
+    docs: https://www.mathworks.com/help/thingspeak/get-a-channel-feed.html
+  - id: thingspeak_write_api_key
+    api: ThingSpeak REST API
+    type: apiKey
+    in: query
+    name: api_key
+    also_accepted_in: header (THINGSPEAKAPIKEY)
+    scope_of_use: Writing entries to a channel (/update, bulk JSON/CSV writes).
+    required: true
+    docs: https://www.mathworks.com/help/thingspeak/write-data.html
+  - id: thingspeak_user_api_key
+    api: ThingSpeak REST API
+    type: apiKey
+    in: query
+    name: api_key
+    scope_of_use: Account-level operations — listing a user's channels, creating, updating and deleting channels.
+    required: true
+    docs: https://www.mathworks.com/help/thingspeak/channels-and-charts-api.html
+  - id: thingspeak_mqtt_device
+    api: ThingSpeak MQTT API
+    type: credentials
+    transport: MQTT / MQTT over WebSocket
+    credentials:
+      - client ID
+      - username
+      - password
+    scope_of_use: Publish and subscribe on ThingSpeak channels.
+    provisioning: Devices are created in the ThingSpeak web interface; regenerating credentials disables the old password.
+    limits:
+      authorized_channels_per_device: 10
+      devices_per_user: 100
+    docs: https://www.mathworks.com/help/thingspeak/mqtt-basics.html
+  - id: mps_session_cookie
+    api: MATLAB Production Server RESTful API
+    type: cookie
+    in: header
+    name: Cookie
+    scope_of_use: >-
+      Required for asynchronous requests so the client sticks to the server that holds the request
+      state; the server sets it with Set-Cookie. Omitted for synchronous requests.
+    docs: https://www.mathworks.com/help/mps/restfuljson/restful-api.html
+  - id: mps_transport_security
+    api: MATLAB Production Server RESTful API
+    type: mutualTLS
+    scope_of_use: >-
+      MATLAB Production Server is customer-hosted. Transport security, client certificate verification
+      and access control are configured on the operator's own instance rather than by MathWorks, so
+      there is no MathWorks-issued credential for this API.
+    docs: https://www.mathworks.com/help/mps/server/security.html
+  - id: matlab_mcp_server_local
+    api: MATLAB MCP Server
+    type: none
+    scope_of_use: >-
+      The official MCP server runs as a local stdio process. There is no token: the trust boundary is
+      the operator's machine and the MATLAB licence on it. MathWorks' own README asks for a human in
+      the loop on every tool call because evaluate_matlab_code and run_matlab_file execute arbitrary code.
+    docs: https://github.com/matlab/matlab-mcp-server#security-considerations
+transport:
+  https_required: true
+  evidence: >-
+    ThingSpeak and mathworks.com both negotiate TLSv1.3; see security/matlab-domain-security.yml.
+    ThingSpeak additionally rejects REST requests whose Host header is not api.thingspeak.com.
+key_management:
+  rotation: Channel Read/Write API keys and MQTT device credentials are regenerable from the ThingSpeak web interface.
+  documented_prefixes: none
+  expiry: none documented
