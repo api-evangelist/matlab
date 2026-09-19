@@ -192,7 +192,7 @@ apis:
     baseURL: https://www.mathworks.com/help/webappserver
     tags:
       - Deployment
-      - Server
+      - Servers
       - Web App
     tags_raw:
       - Deployment
@@ -277,6 +277,11 @@ apis:
     humanURL: https://www.mathworks.com/help/compiler_sdk/
     baseURL: https://www.mathworks.com/help/compiler_sdk
     tags:
+      - Compilers
+      - Deployment
+      - Integration
+      - SDK
+    tags_raw:
       - Compiler
       - Deployment
       - Integration
