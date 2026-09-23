@@ -4,136 +4,137 @@ provider: MATLAB
 providerId: matlab
 generated: '2026-09-14'
 method: probed
-source: live HTTPS probes of every host in apis.yml (registrable domain + www, every apis[].baseURL host, the docs/console host)
-note: >-
-  www.mathworks.com sits behind an Akamai edge that answers a default crawler User-Agent with
-  HTTP 403 "Access Denied" on every path, including /robots.txt. Every probe below was re-run with a
-  full browser header set (Chrome UA + sec-ch-ua + Sec-Fetch-*), which the edge accepts. Under that
-  header set the host returns a real 200 for /.well-known/security.txt and /llms.txt, and a 403 for
-  paths it does not serve — so on this host 403 is the "absent" answer, not a block on our run.
-  A 403 recorded here is NOT evidence the provider serves the document.
+source: live HTTPS probes of every host in apis.yml (registrable domain + www, every apis[].baseURL host,
+  the docs/console host)
+note: www.mathworks.com sits behind an Akamai edge that answers a default crawler User-Agent with HTTP
+  403 "Access Denied" on every path, including /robots.txt. Every probe below was re-run with a full browser
+  header set (Chrome UA + sec-ch-ua + Sec-Fetch-*), which the edge accepts. Under that header set the
+  host returns a real 200 for /.well-known/security.txt and /llms.txt, and a 403 for paths it does not
+  serve — so on this host 403 is the "absent" answer, not a block on our run. A 403 recorded here is NOT
+  evidence the provider serves the document.
 hosts:
-  - host: www.mathworks.com
-    documents:
-      - path: /.well-known/security.txt
-        status: 200
-        file: well-known/matlab-security.txt
-        content_type: text/plain
-        note: Real RFC 9116 document. Contact product-security@mathworks.com, Policy points at the MathWorks vulnerability disclosure policy, Expires 2026-12-31.
-      - path: /.well-known/openid-configuration
-        status: 403
-        file: null
-      - path: /.well-known/oauth-authorization-server
-        status: 403
-        file: null
-      - path: /.well-known/api-catalog
-        status: 403
-        file: null
-      - path: /.well-known/ai-plugin.json
-        status: 403
-        file: null
-      - path: /.well-known/agent-card.json
-        status: 403
-        file: null
-      - path: /.well-known/agent.json
-        status: 403
-        file: null
-      - path: /llms.txt
-        status: 200
-        file: llms/matlab-llms.txt
-        content_type: text/plain
-        note: Provider-authored llms.txt, 382 lines, self-declared "Last updated 2025-02-25".
-  - host: mathworks.com
-    documents:
-      - path: /.well-known/security.txt
-        status: 301
-        file: null
-        note: apex 301-redirects to www.mathworks.com for every path probed.
-      - path: /.well-known/openid-configuration
-        status: 301
-        file: null
-      - path: /.well-known/oauth-authorization-server
-        status: 301
-        file: null
-      - path: /.well-known/api-catalog
-        status: 301
-        file: null
-      - path: /.well-known/ai-plugin.json
-        status: 301
-        file: null
-      - path: /.well-known/agent-card.json
-        status: 301
-        file: null
-      - path: /.well-known/agent.json
-        status: 301
-        file: null
-      - path: /llms.txt
-        status: 301
-        file: null
-  - host: api.thingspeak.com
-    documents:
-      - path: /.well-known/security.txt
-        status: 404
-        file: null
-      - path: /.well-known/openid-configuration
-        status: 404
-        file: null
-      - path: /.well-known/oauth-authorization-server
-        status: 404
-        file: null
-      - path: /.well-known/api-catalog
-        status: 404
-        file: null
-      - path: /.well-known/ai-plugin.json
-        status: 404
-        file: null
-      - path: /.well-known/agent-card.json
-        status: 404
-        file: null
-      - path: /.well-known/agent.json
-        status: 404
-        file: null
-      - path: /llms.txt
-        status: 404
-        file: null
-  - host: thingspeak.com
-    documents:
-      - path: /.well-known/security.txt
-        status: 301
-        file: null
-        note: 301-redirects to thingspeak.mathworks.com.
-      - path: /.well-known/agent-card.json
-        status: 301
-        file: null
-      - path: /llms.txt
-        status: 301
-        file: null
-  - host: thingspeak.mathworks.com
-    documents:
-      - path: /.well-known/security.txt
-        status: 404
-        file: null
-      - path: /.well-known/openid-configuration
-        status: 404
-        file: null
-      - path: /.well-known/oauth-authorization-server
-        status: 404
-        file: null
-      - path: /.well-known/api-catalog
-        status: 404
-        file: null
-      - path: /.well-known/ai-plugin.json
-        status: 404
-        file: null
-      - path: /.well-known/agent-card.json
-        status: 404
-        file: null
-      - path: /.well-known/agent.json
-        status: 404
-        file: null
-      - path: /llms.txt
-        status: 404
-        file: null
+- host: www.mathworks.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: matlab-security.txt
+    content_type: text/plain
+    note: Real RFC 9116 document. Contact product-security@mathworks.com, Policy points at the MathWorks
+      vulnerability disclosure policy, Expires 2026-12-31.
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null
+  - path: /llms.txt
+    status: 200
+    file: llms/matlab-llms.txt
+    content_type: text/plain
+    note: Provider-authored llms.txt, 382 lines, self-declared "Last updated 2025-02-25".
+- host: mathworks.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+    note: apex 301-redirects to www.mathworks.com for every path probed.
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+  - path: /llms.txt
+    status: 301
+    file: null
+- host: api.thingspeak.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
+- host: thingspeak.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+    note: 301-redirects to thingspeak.mathworks.com.
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /llms.txt
+    status: 301
+    file: null
+- host: thingspeak.mathworks.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /llms.txt
+    status: 404
+    file: null
 summary:
   hosts_probed: 5
   documents_served: 2
