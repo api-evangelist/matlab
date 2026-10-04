@@ -1,11 +1,11 @@
 name: MATLAB
-
-description: 'MATLAB is the MathWorks programming platform for engineers and scientists, and its interface surface is unusually split. Most of
-  it is in-process language bindings — the MATLAB Engine APIs for Python, Java, C++, C, Fortran and .NET, the MEX API, the C++ Data API and the
-  Compiler SDK — which embed MATLAB into other programs rather than exposing it over HTTP. Two surfaces are callable over the network: the ThingSpeak
-  REST and MQTT APIs for IoT channel data, hosted by MathWorks, and the MATLAB Production Server RESTful API, which customers run themselves.
-  On top of both sits a large first-party agent layer: the official MATLAB MCP Server and 212 published Agent Skills.'
-
+description: 'MATLAB is the MathWorks programming platform for engineers and scientists, and its interface
+  surface is unusually split. Most of it is in-process language bindings — the MATLAB Engine APIs for
+  Python, Java, C++, C, Fortran and .NET, the MEX API, the C++ Data API and the Compiler SDK — which embed
+  MATLAB into other programs rather than exposing it over HTTP. Two surfaces are callable over the network:
+  the ThingSpeak REST and MQTT APIs for IoT channel data, hosted by MathWorks, and the MATLAB Production
+  Server RESTful API, which customers run themselves. On top of both sits a large first-party agent layer:
+  the official MATLAB MCP Server and 212 published Agent Skills.'
 deliveryModel:
   model: unknown
   open_source: unknown
@@ -18,9 +18,7 @@ deliveryModel:
   - repository-unlicensed
   generated: '2026-08-28'
   method: derived
-
 specificationVersion: '0.23'
-
 accessModel:
   pricing: freemium
   onboarding: unknown
@@ -33,27 +31,20 @@ accessModel:
   - plans
   generated: '2026-07-22'
   method: derived
-
 image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
-
 url: https://www.mathworks.com
-
 created: '2025'
-
 modified: '2026-09-14'
-
 maintainers:
 - name: Kin Lane
   email: kin@apievangelist.com
   url: https://apievangelist.com
-
 tags:
 - Data Analysis
 - Engineering
 - Machine-Learning
 - Numerical Analysis
 - Scientific Computing
-
 common:
 - type: Hosts
   url: hosts/matlab-hosts.yml
@@ -149,11 +140,10 @@ common:
   url: https://www.mathworks.com/company/aboutus/policies_statements/privacy-policy.html
 - type: SignUp
   url: https://www.mathworks.com/mwaccount/register
-
 apis:
 - name: MATLAB Engine API for Python
-  description: Call MATLAB from Python, allowing Python programs to start MATLAB, execute MATLAB functions, and exchange data between Python and
-    MATLAB.
+  description: Call MATLAB from Python, allowing Python programs to start MATLAB, execute MATLAB functions,
+    and exchange data between Python and MATLAB.
   image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
   humanURL: https://www.mathworks.com/help/matlab/matlab-engine-for-python.html
   baseURL: https://www.mathworks.com/help/matlab/apiref
@@ -208,7 +198,8 @@ apis:
     url: https://www.mathworks.com/help/matlab/matlab_external/requirements-to-build-cpp-engine-programs.html
   aid: matlab:matlab-engine-api-for-c
 - name: MATLAB Engine API for C and Fortran
-  description: Call MATLAB from C and Fortran programs using the MATLAB engine library, enabling MATLAB as a computation engine for native applications.
+  description: Call MATLAB from C and Fortran programs using the MATLAB engine library, enabling MATLAB
+    as a computation engine for native applications.
   image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
   humanURL: https://www.mathworks.com/help/matlab/matlab_external/introducing-matlab-engine.html
   baseURL: https://www.mathworks.com/help/matlab/apiref
@@ -230,8 +221,8 @@ apis:
     url: https://www.mathworks.com/help/matlab/matlab_external/matlab-fortran-api-libraries.html
   aid: matlab:matlab-engine-api-for-c-and-fortran
 - name: MATLAB Engine API for .NET
-  description: Call MATLAB from .NET programming languages, enabling .NET programs to launch MATLAB, evaluate MATLAB functions with arguments,
-    and exchange data synchronously or asynchronously.
+  description: Call MATLAB from .NET programming languages, enabling .NET programs to launch MATLAB, evaluate
+    MATLAB functions with arguments, and exchange data synchronously or asynchronously.
   image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
   humanURL: https://www.mathworks.com/help/matlab/call-matlab-from-net.html
   baseURL: https://www.mathworks.com/help/matlab/apiref
@@ -263,8 +254,8 @@ apis:
     url: https://www.mathworks.com/products/matlab-production-server.html
   aid: matlab:matlab-restful-web-services
 - name: MATLAB Production Server RESTful API
-  description: RESTful API for executing MATLAB functions on MATLAB Production Server, including function execution, discovery and diagnostics,
-    and secure management of deployable archives.
+  description: RESTful API for executing MATLAB functions on MATLAB Production Server, including function
+    execution, discovery and diagnostics, and secure management of deployable archives.
   image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
   humanURL: https://www.mathworks.com/help/mps/restful-api-and-json.html
   baseURL: https://www.mathworks.com/help/mps
@@ -292,8 +283,8 @@ apis:
     url: https://www.mathworks.com/help/mps/
   aid: matlab:matlab-production-server-restful-api
 - name: MATLAB Web App Server
-  description: Host MATLAB apps and Simulink simulations as interactive web apps, with support for authentication, role-based access, and server
-    management via command-line interface.
+  description: Host MATLAB apps and Simulink simulations as interactive web apps, with support for authentication,
+    role-based access, and server management via command-line interface.
   image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
   humanURL: https://www.mathworks.com/help/webappserver/index.html
   baseURL: https://www.mathworks.com/help/webappserver
@@ -354,8 +345,8 @@ apis:
     url: https://www.mathworks.com/help/matlab/web-services.html
   aid: matlab:matlab-http-interface
 - name: MATLAB MEX API
-  description: Build MEX functions that enable calling C, C++, and Fortran code from MATLAB, with support for both the C++ MEX API and the C Matrix
-    API.
+  description: Build MEX functions that enable calling C, C++, and Fortran code from MATLAB, with support
+    for both the C++ MEX API and the C Matrix API.
   image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
   humanURL: https://www.mathworks.com/help/matlab/call-mex-files-1.html
   baseURL: https://www.mathworks.com/help/matlab/apiref
@@ -378,8 +369,8 @@ apis:
     url: https://www.mathworks.com/help/matlab/ref/mex.html
   aid: matlab:matlab-mex-api
 - name: MATLAB Compiler SDK API
-  description: Build C/C++ shared libraries, .NET assemblies, Java classes, and Python packages from MATLAB programs for integration with custom
-    applications.
+  description: Build C/C++ shared libraries, .NET assemblies, Java classes, and Python packages from MATLAB
+    programs for integration with custom applications.
   image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
   humanURL: https://www.mathworks.com/help/compiler_sdk/
   baseURL: https://www.mathworks.com/help/compiler_sdk
@@ -408,8 +399,8 @@ apis:
     url: https://www.mathworks.com/help/compiler_sdk/mps.html
   aid: matlab:matlab-compiler-sdk-api
 - name: ThingSpeak REST API
-  description: IoT analytics platform REST API for reading and writing data to channels, creating and managing channels, and analyzing IoT data
-    with MATLAB in the cloud.
+  description: IoT analytics platform REST API for reading and writing data to channels, creating and
+    managing channels, and analyzing IoT data with MATLAB in the cloud.
   image: https://www.mathworks.com/etc/designs/mathworks/img/pic-header-mathworks-logo2.svg
   humanURL: https://www.mathworks.com/help/thingspeak/rest-api.html
   baseURL: https://api.thingspeak.com
@@ -430,21 +421,20 @@ apis:
   - type: GitHubRepository
     url: https://github.com/mathworks/thingspeak-arduino
   aid: matlab:thingspeak-rest-api
-
 tags_raw:
 - Data Analysis
 - Engineering
 - Machine Learning
 - Numerical Analysis
 - Scientific Computing
-
 x-coverage:
   state: blocked
   reason: bot-challenge
   method: derived
   generated: '2026-10-03'
   generator: derive-coverage.py (pre-flight evidence)
-  detail: the company's own front door answers a browser with an anti-bot challenge, so nothing behind it is reachable by any reader
+  detail: the company's own front door answers a browser with an anti-bot challenge, so nothing behind
+    it is reachable by any reader
   evidence:
   - url: https://www.mathworks.com/graphql
     status: 403
