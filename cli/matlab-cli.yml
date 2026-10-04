@@ -2,6 +2,8 @@ specification: API Commons CLI
 specificationVersion: '0.1'
 provider: MATLAB
 providerId: matlab
+install: []
+commands: []
 generated: '2026-09-14'
 method: searched
 source: >-

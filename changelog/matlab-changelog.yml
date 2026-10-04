@@ -4,6 +4,9 @@ provider: MATLAB
 providerId: matlab
 generated: '2026-09-14'
 method: searched
+entries:
+  - { version: v0.13.0, date: '2026-09-03' }
+entries: []
 source: >-
   https://github.com/matlab/matlab-mcp-server/releases (GitHub Releases API, read 2026-09-14) and
   https://www.mathworks.com/help/matlab/release-notes.html

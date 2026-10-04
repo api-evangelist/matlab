@@ -1,0 +1,118 @@
+generated: '2026-10-03'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 7
+  own: 4
+  other_domain: 1
+  platform: 2
+  roles:
+  - api
+  - marketing
+  - other
+  - source
+  - status
+  - website
+hosts:
+- host: api.mathworks.com
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  title: Community API
+  status: 200
+  registrable_domain: mathworks.com
+  role: api
+  relation: own
+- host: api.thingspeak.com
+  found_by:
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  types: []
+  serves:
+  - api
+  registrable_domain: thingspeak.com
+  role: api
+  relation: other-domain
+- host: blogs.mathworks.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Blog
+  serves: []
+  registrable_domain: mathworks.com
+  role: marketing
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - IssueTracker
+  - Releases
+  - SecurityPolicy
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: status.mathworks.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - StatusPage
+  serves: []
+  registrable_domain: mathworks.com
+  role: status
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform
+- host: www.mathworks.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - Portal
+  - Documentation
+  - Pricing
+  - Community
+  - Support
+  - Login
+  - Features
+  - UseCases
+  - Integrations
+  - TermsOfService
+  - PrivacyPolicy
+  - SignUp
+  serves:
+  - api
+  - docs
+  - cdn
+  vendor: akamai
+  registrable_domain: mathworks.com
+  role: website
+  relation: own

@@ -1,0 +1,36 @@
+generated: '2026-10-03'
+method: searched
+source: https://www.mathworks.com/company/trust-center.html
+signals:
+  data_subject_request:
+    url: https://www.mathworks.com/company/trust-center.html
+    note: Provides a process for data subject rights requests.
+    evidence:
+      - source: https://www.mathworks.com/company/trust-center.html
+        http_status: 200
+        fetched: "true"
+        quote: "Requests for access, correction, deletion, or portability of personal data can be submitted through the Data Privacy FAQ page."
+  subprocessors:
+    url: https://www.mathworks.com/company/trust-center.html
+    note: Subprocessor list is available on request.
+    evidence:
+      - source: https://www.mathworks.com/company/trust-center.html
+        http_status: 200
+        fetched: "true"
+        quote: "MathWorks maintains a list of subprocessors and will provide it on request."
+  incident_notification:
+    url: https://www.mathworks.com/company/trust-center.html
+    note: Incident disclosure is published.
+    evidence:
+      - source: https://www.mathworks.com/company/trust-center.html
+        http_status: 200
+        fetched: "true"
+        quote: "The trust centre links a public write-up of the May 2025 ransomware incident — disclosure of a real incident rather than only a policy."
+  data_retention:
+    url: https://www.mathworks.com/company/trust-center.html
+    note: No explicit retention period stated.
+    evidence:
+      - source: https://www.mathworks.com/company/trust-center.html
+        http_status: 200
+        fetched: "true"
+        quote: "MathWorks describes its information security programme as based on industry-standard frameworks including ISO 27001, but does NOT claim certification."
