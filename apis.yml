@@ -8,16 +8,20 @@ description: >-
   MATLAB Production Server RESTful API, which customers run themselves. On top of both sits a large
   first-party agent layer: the official MATLAB MCP Server and 212 published Agent Skills.
 deliveryModel:
-  model: unknown
+  model: saas
+  license_evidence:
+    not_product:
+    - mathworks/matlab-engine-for-python
+    - mathworks/thingspeak-arduino
   open_source: unknown
   commercial: true
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
+  label: Hosted service · you call their endpoint
   confidence: low
   source:
   - pricing
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 specificationVersion: '0.23'
 accessModel:
@@ -420,7 +424,7 @@ maintainers:
 tags:
   - Data Analysis
   - Engineering
-  - Machine-Learning
+  - Machine Learning
   - Numerical Analysis
   - Scientific Computing
 tags_raw:
@@ -429,6 +433,7 @@ tags_raw:
   - Machine Learning
   - Numerical Analysis
   - Scientific Computing
+  - Machine-Learning
 x-enrichment:
   date: '2026-09-14'
   status: enriched
