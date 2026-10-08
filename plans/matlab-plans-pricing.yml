@@ -156,3 +156,104 @@ metering:
   source: https://thingspeak.mathworks.com/pages/license_faq
 plan_count: 13
 priced_plan_count: 3
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - negotiated
+  - subscription
+  units:
+  - compute
+  - message
+  plans:
+  - name: Standard
+    access: paid
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - year
+  - name: Individual
+    access: paid
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - year
+  - name: Startup
+    access: paid
+    model: negotiated
+    model_how: derived
+    units: []
+    periods:
+    - year
+  - name: Academic
+    access: free
+    model: negotiated
+    model_how: derived
+    units: []
+    periods:
+    - year
+  - name: Campus-Wide License
+    access: free
+    model: negotiated
+    model_how: derived
+    units: []
+    periods:
+    - year
+  - name: Student
+    access: free
+    model: negotiated
+    model_how: derived
+    units: []
+    periods:
+    - year
+  - name: Home
+    access: other
+    model: negotiated
+    model_how: derived
+    units: []
+    periods:
+    - year
+  - name: ThingSpeak Free
+    access: freemium
+    model: free
+    model_how: derived
+    units:
+    - compute
+    - message
+    - other
+    periods:
+    - year
+  - name: ThingSpeak Standard
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - compute
+    - message
+    - other
+    periods:
+    - year
+  - name: ThingSpeak Academic
+    access: free
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - year
+  - name: ThingSpeak Student
+    access: free
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - year
+  - name: ThingSpeak Home
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - year
