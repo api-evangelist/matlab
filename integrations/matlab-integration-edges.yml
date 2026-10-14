@@ -50,7 +50,31 @@ edges:
       url: https://site.imsglobal.org/node/628269
     detected_by: sweep-edtech.py
     detected: '2026-10-14'
+- partner_name: GitHub Marketplace (actions)
+  partner: github-actions
+  partner_match: aggregator
+  type: marketplace
+  marketplace: github-actions
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://github.com/marketplace/actions/setup-matlab
+  listing_count: 4
+  apps:
+  - Setup MATLAB
+  - Run MATLAB Command
+  - Run MATLAB Tests
+  - Run MATLAB Build
+  publisher_name: MATLAB Actions
+  badges:
+  - Verified creator
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
 generated: '2026-10-14'
 method: searched
 checked:
+- https://github.com/marketplace?type=actions
 - https://site.imsglobal.org/certifications
+marketplace_apps: []
+source:
+- https://github.com/marketplace?type=actions
