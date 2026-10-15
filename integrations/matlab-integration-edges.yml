@@ -101,10 +101,52 @@ edges:
     detected: '2026-10-15'
   detected_by: sweep-higher-ed.py
   first_seen: '2026-10-15'
+- partner_name: OPC Foundation (OPC UA)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  evidence: https://opcfoundation.org/products/view/opc-toolbox/
+  category: OPC UA products
+  channel: standard-directory
+  relationship: standard-participant
+  contract_reference:
+    register: OPC Foundation product marketplace (opcfoundation.org/products)
+    spec_file: null
+    standard: OPC UA
+    role: OPC UA product listed
+    registered_name: MathWorks
+    member_id: '6306'
+    website: https://www.mathworks.com/
+    matched_domain: mathworks.com
+    matched_by: domain+verified
+    listed_products: 9
+    certified_products: []
+    listed_categories:
+    - None
+    - SCADA
+    sample_products:
+    - MathWorks Data Acquisition Toolbox Show details
+    - MathWorks Deep Learning Toolbox Show details
+    - MathWorks Image Acquisition Toolbox Show details
+    - MathWorks Industrial Communication Toolbox Show details
+    - MathWorks Instrument Control Toolbox Show details
+    signal_note: certified_products = one entry per product CATEGORY with a certified product (diversity), never
+      per product; listed_products is context, never read
+    detected_by: sweep-industrial-robotics.py
+    detected: '2026-10-15'
+  detected_by: sweep-industrial-robotics.py
+  first_seen: '2026-10-15'
 generated: '2026-10-14'
 method: searched
 checked:
 - https://github.com/marketplace?type=actions
+- https://marketplace.odva.org/organizations
+- https://opcfoundation.org/products/
+- https://repo.ros2.org/rosdistro_cache/humble-cache.yaml.gz
+- https://repo.ros2.org/rosdistro_cache/jazzy-cache.yaml.gz
+- https://repo.ros2.org/rosdistro_cache/kilted-cache.yaml.gz
+- https://repo.ros2.org/rosdistro_cache/rolling-cache.yaml.gz
 - https://site.imsglobal.org/certifications
 - https://technical.edugain.org/api.php?action=list_entities&type=idp&format=json
 - https://technical.edugain.org/api.php?action=list_entities&type=sp&format=json

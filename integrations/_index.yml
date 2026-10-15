@@ -101,3 +101,39 @@
     detected: '2026-10-15'
   status: not-a-workflow
   arazzo: null
+- slug: matlab-opc-foundation-opc-ua
+  label: OPC Foundation (OPC UA)
+  partner_name: OPC Foundation (OPC UA)
+  category: OPC UA products
+  type: register
+  channel: standard-directory
+  evidence: https://opcfoundation.org/products/view/opc-toolbox/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: OPC Foundation product marketplace (opcfoundation.org/products)
+    spec_file: null
+    standard: OPC UA
+    role: OPC UA product listed
+    registered_name: MathWorks
+    member_id: '6306'
+    website: https://www.mathworks.com/
+    matched_domain: mathworks.com
+    matched_by: domain+verified
+    listed_products: 9
+    certified_products: []
+    listed_categories:
+    - None
+    - SCADA
+    sample_products:
+    - MathWorks Data Acquisition Toolbox Show details
+    - MathWorks Deep Learning Toolbox Show details
+    - MathWorks Image Acquisition Toolbox Show details
+    - MathWorks Industrial Communication Toolbox Show details
+    - MathWorks Instrument Control Toolbox Show details
+    signal_note: certified_products = one entry per product CATEGORY with a certified product (diversity), never
+      per product; listed_products is context, never read
+    detected_by: sweep-industrial-robotics.py
+    detected: '2026-10-15'
+  status: not-a-workflow
+  arazzo: null
