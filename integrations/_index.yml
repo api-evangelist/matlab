@@ -137,3 +137,43 @@
     detected: '2026-10-15'
   status: not-a-workflow
   arazzo: null
+- slug: matlab-pypi
+  label: PyPI
+  partner: pypi
+  partner_name: PyPI
+  category: official SDK (Python)
+  type: register
+  channel: package-registry
+  evidence: https://pypi.org/project/jupyter-matlab-proxy/
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: PyPI (public registry JSON)
+    spec_file: null
+    language: Python
+    packages:
+    - name: jupyter-matlab-proxy
+      version: 0.20.0
+      released: '2026-09-30'
+      released_field: upload_time
+      lapsed: false
+      page: https://pypi.org/project/jupyter-matlab-proxy/
+      repo_leg: shared-github-org:mathworks
+      publisher_leg: email:mathworks.com
+      matched_by: domain+name-among-holders
+    - name: matlab-proxy
+      version: 0.35.0
+      released: '2026-09-25'
+      released_field: upload_time
+      lapsed: false
+      page: https://pypi.org/project/matlab-proxy/
+      repo_leg: shared-github-org:mathworks
+      publisher_leg: email:mathworks.com
+      matched_by: domain+name-among-holders
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  status: not-a-workflow
+  arazzo: null
