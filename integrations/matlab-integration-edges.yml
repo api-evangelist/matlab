@@ -176,10 +176,28 @@ edges:
     detected: '2026-10-18'
   detected_by: sweep-official-sdks.py
   first_seen: '2026-10-18'
+- partner_name: Onshape (own)
+  partner: onshape
+  partner_match: mirror
+  mirror_match: domain+verified
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://cad.onshape.com/appstore/apps/Simulation/57dadeaa9aaed50f3dc62665
+  mirror_of: onshape/integrations/onshape-integration-edges.yml
+  apps:
+  - Simscape Multibody
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+  category: Simulation
 generated: '2026-10-14'
 method: searched
 checked:
 - https://api.nuget.org/v3
+- https://cad.onshape.com/appstore
 - https://crates.io/api/v1
 - https://github.com/marketplace?type=actions
 - https://marketplace.odva.org/organizations

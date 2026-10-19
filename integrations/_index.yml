@@ -177,3 +177,16 @@
     detected: '2026-10-18'
   status: not-a-workflow
   arazzo: null
+- slug: matlab-onshape-own
+  label: Onshape (own)
+  partner: onshape
+  partner_name: Onshape (own)
+  category: Simulation
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://cad.onshape.com/appstore/apps/Simulation/57dadeaa9aaed50f3dc62665
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
