@@ -50,26 +50,6 @@ edges:
       url: https://site.imsglobal.org/node/628269
     detected_by: sweep-edtech.py
     detected: '2026-10-14'
-- partner_name: GitHub Marketplace (actions)
-  partner: github-actions
-  partner_match: aggregator
-  type: marketplace
-  marketplace: github-actions
-  channel: partner-built
-  relationship: platform-app
-  direction: third-party
-  evidence: https://github.com/marketplace/actions/setup-matlab
-  listing_count: 4
-  apps:
-  - Setup MATLAB
-  - Run MATLAB Command
-  - Run MATLAB Tests
-  - Run MATLAB Build
-  publisher_name: MATLAB Actions
-  badges:
-  - Verified creator
-  detected_by: sweep-devtools.py
-  detected: '2026-10-14'
 - partner_name: eduGAIN
   partner: null
   type: register
@@ -193,14 +173,73 @@ edges:
   detected: '2026-10-19'
   detected_by: mirror-platform-listings.py
   category: Simulation
+- partner_name: Microsoft Azure Marketplace
+  partner: microsoft-azure
+  partner_match: aggregator
+  type: marketplace
+  marketplace: azure-marketplace
+  channel: distribution
+  relationship: distribution-channel
+  direction: third-party
+  evidence: https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=MathWorks
+  listing_count: 4
+  apps:
+  - Network License Manager for MATLAB®
+  - MATLAB Cloud Reference Images
+  - MATLAB (BYOL)
+  - MATLAB Parallel Server (BYOL)
+  seller_name: MathWorks
+  detected_by: sweep-cloud-marketplaces.py
+  detected: '2026-10-19'
+- partner_name: GitHub Marketplace (actions)
+  partner: github-actions
+  partner_match: aggregator
+  type: marketplace
+  marketplace: github-actions
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://github.com/marketplace/actions/setup-matlab
+  listing_count: 4
+  apps:
+  - Setup MATLAB
+  - Run MATLAB Command
+  - Run MATLAB Tests
+  - Run MATLAB Build
+  publisher_name: MATLAB Actions
+  badges:
+  - Verified creator
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
+- partner_name: Visual Studio Code Marketplace
+  partner: vs-code-marketplace
+  partner_match: aggregator
+  type: marketplace
+  marketplace: vscode
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://marketplace.visualstudio.com/publishers/MathWorks
+  listing_count: 2
+  apps:
+  - MATLAB
+  - Polyspace as You Code
+  publisher_name: MathWorks
+  badges:
+  - Verified publisher
+  - Verified domain
+  detected_by: sweep-devtools.py
+  detected: '2026-10-19'
 generated: '2026-10-14'
 method: searched
 checked:
 - https://api.nuget.org/v3
+- https://azuremarketplace.microsoft.com/
 - https://cad.onshape.com/appstore
 - https://crates.io/api/v1
 - https://github.com/marketplace?type=actions
 - https://marketplace.odva.org/organizations
+- https://marketplace.visualstudio.com/vscode
 - https://opcfoundation.org/products/
 - https://proxy.golang.org
 - https://pypi.org/pypi
@@ -214,6 +253,7 @@ checked:
 - https://site.imsglobal.org/certifications
 - https://technical.edugain.org/api.php?action=list_entities&type=idp&format=json
 - https://technical.edugain.org/api.php?action=list_entities&type=sp&format=json
+- onshape/integrations/onshape-integration-edges.yml
 marketplace_apps: []
 source:
 - https://github.com/marketplace?type=actions
