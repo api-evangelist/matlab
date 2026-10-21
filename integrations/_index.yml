@@ -165,19 +165,6 @@
     detected: '2026-10-18'
   status: not-a-workflow
   arazzo: null
-- slug: matlab-onshape-own
-  label: Onshape (own)
-  partner: onshape
-  partner_name: Onshape (own)
-  category: Simulation
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://cad.onshape.com/appstore/apps/Simulation/57dadeaa9aaed50f3dc62665
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: matlab-microsoft-azure-marketplace
   label: Microsoft Azure Marketplace
   partner: microsoft-azure
@@ -210,6 +197,62 @@
   marketplace: vscode
   channel: partner-built
   evidence: https://marketplace.visualstudio.com/publishers/MathWorks
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: matlab-scoop
+  label: Scoop
+  partner_name: Scoop
+  category: official CLI (Scoop)
+  type: register
+  channel: package-registry
+  evidence: https://github.com/ScoopInstaller/Main/blob/master/bucket/matlab-package-manager.json
+  source: edge
+  relationship: distribution-channel
+  contract_reference:
+    register: Scoop (public package index)
+    spec_file: null
+    packages:
+    - name: matlab-package-manager
+      kind: main
+      version: '2026.8'
+      released: null
+      lapsed: false
+      page: https://github.com/ScoopInstaller/Main/blob/master/bucket/matlab-package-manager.json
+      cli: 'scoop description: Official command line package manager for MathWorks products.'
+      repo_leg: domain:mathworks.com
+      publisher_leg: artifact-domain:mathworks.com
+      matched_by: domain+name-among-holders
+    current: true
+    signal_note: 'the provider''s own command-line tool on a package manager: distribution, not an integration;
+      lapsed = no release in 24 months or deprecated / disabled by the manager'
+    detected_by: sweep-official-clis.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
+- slug: matlab-onshape-own
+  label: Onshape (own)
+  partner: onshape
+  partner_name: Onshape (own)
+  category: Simulation
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://cad.onshape.com/appstore/apps/Simulation/57dadeaa9aaed50f3dc62665
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: matlab-eclipse-foundation-open-vsx
+  label: Eclipse Foundation (open-vsx)
+  partner: eclipse
+  partner_name: Eclipse Foundation (open-vsx)
+  category: IDE / developer extension marketplace listing
+  type: marketplace
+  marketplace: open-vsx
+  channel: partner-built
+  evidence: https://open-vsx.org/namespace/mathworks
   source: edge
   relationship: platform-app
   status: not-a-workflow
