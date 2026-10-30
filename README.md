@@ -1,4 +1,4 @@
-# MATLAB (matlab)
+# MATLAB
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,211 +64,139 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-APIs and integration points for MATLAB, a programming platform designed for engineers and scientists.
+MATLAB is the MathWorks programming platform for engineers and scientists, and its interface surface is unusually split. Most of it is in-process language bindings — the MATLAB Engine APIs for Python, Java, C++, C, Fortran and .NET, the MEX API, the C++ Data API and the Compiler SDK — which embed MATLAB into other programs rather than exposing it over HTTP. Two surfaces are callable over the network: the ThingSpeak REST and MQTT APIs for IoT channel data, hosted by MathWorks, and the MATLAB Production Server RESTful API, which customers run themselves. On top of both sits a large first-party agent layer: the official MATLAB MCP Server and 212 published Agent Skills.
 
-**URL:** [Visit APIs.json URL](https://www.mathworks.com)
+**Areas:** Data Analysis · Engineering · Machine Learning · Numerical Analysis · Scientific Computing
 
-## Tags:
+## MATLAB on APIs.io
 
- - Data Analysis, Engineering, Machine Learning, Numerical Analysis, Scientific Computing
+Everything profiled for MATLAB is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/matlab/](https://apis.io/providers/matlab/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (13)
 
-- **Created:** 2025 
-- **Modified:** 2026-04-19 
+- [MATLAB Engine API for Python](https://apis.io/apis/matlab/matlab-engine-api-for-python/) — Call MATLAB from Python, allowing Python programs to start MATLAB, execute MATLAB functions, and exchange data between Python and MATLAB.
+- [MATLAB Engine API for Java](https://apis.io/apis/matlab/matlab-engine-api-for-java/) — Execute MATLAB functions from Java programs and exchange data between Java and MATLAB.
+- [MATLAB Engine API for C++](https://apis.io/apis/matlab/matlab-engine-api-for-c/) — Call MATLAB from C++ programs with object-oriented programming support.
+- [MATLAB Engine API for C and Fortran](https://apis.io/apis/matlab/matlab-engine-api-for-c-and-fortran/) — Call MATLAB from C and Fortran programs using the MATLAB engine library, enabling MATLAB as a computation engine for native applications.
+- [MATLAB Engine API for .NET](https://apis.io/apis/matlab/matlab-engine-api-for-net/) — Call MATLAB from .NET programming languages, enabling .NET programs to launch MATLAB, evaluate MATLAB functions with arguments, and exchange data…
+- [MATLAB RESTful Web Services](https://apis.io/apis/matlab/matlab-restful-web-services/) — Create and deploy RESTful web services from MATLAB functions using MATLAB Production Server.
+- [MATLAB Production Server RESTful API](https://apis.io/apis/matlab/matlab-production-server-restful-api/) — RESTful API for executing MATLAB functions on MATLAB Production Server, including function execution, discovery and diagnostics, and secure management of…
+- [MATLAB Web App Server](https://apis.io/apis/matlab/matlab-web-app-server/) — Host MATLAB apps and Simulink simulations as interactive web apps, with support for authentication, role-based access, and server management via…
+- [MATLAB Data API for C++](https://apis.io/apis/matlab/matlab-data-api-for-c/) — Work with MATLAB data types in C++ applications.
+- [MATLAB HTTP Interface](https://apis.io/apis/matlab/matlab-http-interface/) — RESTful web services support for making HTTP requests from MATLAB.
+- [MATLAB MEX API](https://apis.io/apis/matlab/matlab-mex-api/) — Build MEX functions that enable calling C, C++, and Fortran code from MATLAB, with support for both the C++ MEX API and the C Matrix API.
+- [MATLAB Compiler SDK API](https://apis.io/apis/matlab/matlab-compiler-sdk-api/) — Build C/C++ shared libraries, .NET assemblies, Java classes, and Python packages from MATLAB programs for integration with custom applications.
+- [ThingSpeak REST API](https://apis.io/apis/matlab/thingspeak-rest-api/) — IoT analytics platform REST API for reading and writing data to channels, creating and managing channels, and analyzing IoT data with MATLAB in the cloud.
 
-## APIs
+### Published properties
 
-### MATLAB Engine API for Python
-Call MATLAB from Python, allowing Python programs to start MATLAB, execute MATLAB functions, and exchange data.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-**Human URL:** [https://www.mathworks.com/help/matlab/matlab-engine-for-python.html](https://www.mathworks.com/help/matlab/matlab-engine-for-python.html)
+#### AsyncAPI (1)
 
-#### Tags:
+Event-driven and webhook contracts.
 
- - Engine, Integration, Python
+- [Matlab Thingspeak Events](https://apis.io/asyncapis/matlab/matlab-thingspeak-events/)
 
-#### Properties
+#### MCP servers (1)
 
-- [Documentation](https://www.mathworks.com/help/matlab/matlab-engine-for-python.html)
-- [APIReference](https://www.mathworks.com/help/matlab/apiref/matlab.engine.matlabengine-class.html)
-- [GitHubRepository](https://github.com/mathworks/matlab-engine-for-python)
+Model Context Protocol servers that expose the API to agents.
 
-### MATLAB Engine API for Java
-Execute MATLAB functions from Java programs and exchange data between Java and MATLAB.
+- [MATLAB MCP Server](https://apis.io/servers/matlab/matlab-mcp-server/)
 
-**Human URL:** [https://www.mathworks.com/help/matlab/matlab-engine-api-for-java.html](https://www.mathworks.com/help/matlab/matlab-engine-api-for-java.html)
+#### Security (4)
 
-#### Tags:
+Authentication, trust centre, and vulnerability disclosure.
 
- - Engine, Integration, Java
+- [Matlab Authentication](https://apis.io/security/matlab/matlab-authentication/)
+- [Matlab Domain Security](https://apis.io/security/matlab/matlab-domain-security/)
+- [Matlab Trust Center](https://apis.io/security/matlab/matlab-trust-center/)
+- [Matlab Vulnerability Disclosure](https://apis.io/security/matlab/matlab-vulnerability-disclosure/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [Documentation](https://www.mathworks.com/help/matlab/matlab-engine-api-for-java.html)
+Published plans, tiers and prices.
 
-### MATLAB Engine API for C++
-Call MATLAB from C++ programs with object-oriented programming support.
+- [Matlab Plans Pricing](https://apis.io/plans/matlab/matlab-plans-pricing/)
 
-**Human URL:** [https://www.mathworks.com/help/matlab/matlab-engine-api-for-cpp.html](https://www.mathworks.com/help/matlab/matlab-engine-api-for-cpp.html)
+#### Rate limits (1)
 
-#### Tags:
+Published request limits.
 
- - C++, Engine, Integration
+- [Matlab Rate Limits](https://apis.io/rate-limits/matlab/matlab-rate-limits/)
 
-#### Properties
+#### FinOps (1)
 
-- [Documentation](https://www.mathworks.com/help/matlab/matlab-engine-api-for-cpp.html)
+What the API costs to run, by operation.
 
-### MATLAB Engine API for C and Fortran
-Call MATLAB from C and Fortran programs using the MATLAB engine library.
+- [Matlab Finops](https://apis.io/finops/matlab/matlab-finops/)
 
-**Human URL:** [https://www.mathworks.com/help/matlab/matlab_external/introducing-matlab-engine.html](https://www.mathworks.com/help/matlab/matlab_external/introducing-matlab-engine.html)
+## Where to find this API
 
-#### Tags:
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
- - C, Engine, Fortran, Integration
-
-#### Properties
-
-- [Documentation](https://www.mathworks.com/help/matlab/matlab_external/introducing-matlab-engine.html)
-
-### MATLAB Engine API for .NET
-Call MATLAB from .NET programming languages.
-
-**Human URL:** [https://www.mathworks.com/help/matlab/call-matlab-from-net.html](https://www.mathworks.com/help/matlab/call-matlab-from-net.html)
-
-#### Tags:
-
- - .NET, Engine, Integration
-
-#### Properties
-
-- [Documentation](https://www.mathworks.com/help/matlab/call-matlab-from-net.html)
-
-### MATLAB RESTful Web Services
-Create and deploy RESTful web services from MATLAB functions using MATLAB Production Server.
-
-**Human URL:** [https://www.mathworks.com/help/mps/restfuljson/creating-http-post-interface-to-restful-web-service.html](https://www.mathworks.com/help/mps/restfuljson/creating-http-post-interface-to-restful-web-service.html)
-
-#### Tags:
-
- - Production, REST, Web Services
-
-#### Properties
-
-- [Documentation](https://www.mathworks.com/help/mps/restfuljson/)
-
-### MATLAB Production Server RESTful API
-RESTful API for executing MATLAB functions on MATLAB Production Server.
-
-**Human URL:** [https://www.mathworks.com/help/mps/restful-api-and-json.html](https://www.mathworks.com/help/mps/restful-api-and-json.html)
-
-#### Tags:
-
- - Deployment, Enterprise, Production Server, REST
-
-#### Properties
-
-- [Documentation](https://www.mathworks.com/help/mps/restful-api-and-json.html)
-- [OpenAPI](https://github.com/mathworks-ref-arch/openapi-productionserver)
-
-### MATLAB Web App Server
-Host MATLAB apps and Simulink simulations as interactive web apps.
-
-**Human URL:** [https://www.mathworks.com/help/webappserver/index.html](https://www.mathworks.com/help/webappserver/index.html)
-
-#### Tags:
-
- - Deployment, Server, Web Apps
-
-#### Properties
-
-- [Documentation](https://www.mathworks.com/help/webappserver/index.html)
-
-### MATLAB Data API for C++
-Work with MATLAB data types in C++ applications.
-
-**Human URL:** [https://www.mathworks.com/help/matlab/matlab-data-api-for-c-plus-plus.html](https://www.mathworks.com/help/matlab/matlab-data-api-for-c-plus-plus.html)
-
-#### Tags:
-
- - C++, Data, Types
-
-#### Properties
-
-- [Documentation](https://www.mathworks.com/help/matlab/matlab-data-api-for-c-plus-plus.html)
-
-### MATLAB HTTP Interface
-RESTful web services support for making HTTP requests from MATLAB.
-
-**Human URL:** [https://www.mathworks.com/help/matlab/http-interface.html](https://www.mathworks.com/help/matlab/http-interface.html)
-
-#### Tags:
-
- - Client, HTTP, REST
-
-#### Properties
-
-- [Documentation](https://www.mathworks.com/help/matlab/http-interface.html)
-
-### MATLAB MEX API
-Build MEX functions that enable calling C, C++, and Fortran code from MATLAB.
-
-**Human URL:** [https://www.mathworks.com/help/matlab/call-mex-files-1.html](https://www.mathworks.com/help/matlab/call-mex-files-1.html)
-
-#### Tags:
-
- - C, C++, Extensions, Fortran, MEX
-
-#### Properties
-
-- [Documentation](https://www.mathworks.com/help/matlab/call-mex-files-1.html)
-
-### MATLAB Compiler SDK API
-Build C/C++ shared libraries, .NET assemblies, Java classes, and Python packages from MATLAB programs.
-
-**Human URL:** [https://www.mathworks.com/help/compiler_sdk/](https://www.mathworks.com/help/compiler_sdk/)
-
-#### Tags:
-
- - Compiler, Deployment, Integration, SDK
-
-#### Properties
-
-- [Documentation](https://www.mathworks.com/help/compiler_sdk/)
-- [GettingStarted](https://www.mathworks.com/help/compiler_sdk/getting_started_with_compiler_sdk.html)
-
-### ThingSpeak REST API
-IoT analytics platform REST API for reading and writing data to channels.
-
-**Human URL:** [https://www.mathworks.com/help/thingspeak/rest-api.html](https://www.mathworks.com/help/thingspeak/rest-api.html)
-
-#### Tags:
-
- - Analytics, Channels, IoT, REST
-
-#### Properties
-
-- [Documentation](https://www.mathworks.com/help/thingspeak/index.html)
-- [APIReference](https://www.mathworks.com/help/thingspeak/rest-api.html)
-- [GitHubRepository](https://github.com/mathworks/thingspeak-arduino)
-
-## Common Properties
-
-- [Portal](https://www.mathworks.com)
+- [Website](https://www.mathworks.com)
 - [Documentation](https://www.mathworks.com/help/index.html)
 - [Pricing](https://www.mathworks.com/pricing-licensing.html)
-- [Blog](https://blogs.mathworks.com/)
-- [Community](https://www.mathworks.com/matlabcentral/)
-- [GitHubOrganization](https://github.com/mathworks)
-- [StatusPage](https://status.mathworks.com/)
+- [Sign up](https://www.mathworks.com/mwaccount/register)
 - [Support](https://www.mathworks.com/support.html)
-- [Login](https://www.mathworks.com/login)
-- [Features](https://www.mathworks.com/products/matlab.html)
-- [UseCases](https://www.mathworks.com/solutions.html)
-- [Integrations](https://www.mathworks.com/products/connections.html)
+- [Blog](https://blogs.mathworks.com/)
+- [Terms of service](https://www.mathworks.com/matlabcentral/content/terms-of-use.html)
+- [Privacy policy](https://www.mathworks.com/company/aboutus/policies_statements/privacy-policy.html)
+- [GitHub](https://github.com/mathworks)
+- [Status](https://status.mathworks.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane, **Email:** kin@apievangelist.com
+**Kin Score 70.8** — exemplar · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 83.3 |
+| Contract quality | 45.3 |
+| Contract governance | 4.5 |
+| Operational transparency | 92.1 |
+| Developer ergonomics | 88.1 |
+| Access clarity | 92.1 |
+
+**Agent readiness 33.5** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 32.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/matlab/](https://apis.io/providers/matlab/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for MATLAB: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/matlab/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
