@@ -157,7 +157,7 @@ metering:
 plan_count: 13
 priced_plan_count: 3
 x-canonical:
-  generated: '2026-11-01'
+  generated: '2026-11-02'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - free
